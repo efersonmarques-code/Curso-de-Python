@@ -93,7 +93,7 @@
   }
 
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', 'Segoe UI Emoji', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.7;
     color: #2c3e50;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -178,8 +178,15 @@
   /* ==================== CONTAINER ==================== */
   .container {
     max-width: 1100px;
+    width: 100%;
     margin: 0 auto;
     padding: 30px 20px;
+    box-sizing: border-box;
+  }
+
+  /* Tap highlight transparente nos links (evita flash azul no mobile) */
+  a {
+    -webkit-tap-highlight-color: transparent;
   }
 
   /* ==================== SEÇÕES ==================== */
@@ -229,6 +236,12 @@
   }
 
   /* ==================== TABELAS ==================== */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 20px 0;
+  }
+
   table {
     width: 100%;
     border-collapse: collapse;
@@ -475,6 +488,24 @@
     header::before {
       font-size: 100px;
     }
+
+    /* Menu em coluna no celular muito pequeno */
+    nav ul {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    nav ul li a {
+      text-align: center;
+      padding: 10px;
+      display: block;
+    }
+
+    /* Bloco <pre> com fonte menor em mobile */
+    pre {
+      font-size: 0.8em;
+      padding: 15px;
+    }
   }
 
   /* ==================== ACESSIBILIDADE: REDUZIR MOVIMENTO ==================== */
@@ -529,6 +560,7 @@
   <!-- ========== 2. HISTÓRIA ========== -->
   <section id="historia">
     <h2>2. História</h2>
+    <div class="table-wrapper">
     <table>
       <caption>Linha do tempo da evolução da linguagem Python</caption>
       <thead>
@@ -548,6 +580,7 @@
         <tr><td>Atual</td><td>Python 3.14 é a versão estável mais recente</td></tr>
       </tbody>
     </table>
+    </div>
     <div class="callout">
       <strong>🎬 Curiosidade:</strong> O nome "Python" veio do programa de TV britânico <em>Monty Python's Flying Circus</em>, do qual Guido era fã.
     </div>
@@ -609,6 +642,7 @@ usando três aspas (docstring)
   <!-- ========== 6. TIPOS DE DADOS ========== -->
   <section id="tipos">
     <h2>6. Tipos de Dados</h2>
+    <div class="table-wrapper">
     <table>
       <caption>Tipos de dados primitivos do Python</caption>
       <thead>
@@ -622,6 +656,7 @@ usando três aspas (docstring)
         <tr><td><code>None</code></td><td><code>None</code></td><td>Ausência de valor</td></tr>
       </tbody>
     </table>
+    </div>
 
     <h3>Estruturas de dados</h3>
     <pre><code># Listas (mutáveis e ordenadas)
