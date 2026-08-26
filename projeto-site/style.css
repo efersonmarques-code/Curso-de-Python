@@ -1,0 +1,242 @@
+:root {
+  --ink: #17202a;
+  --muted: #52606d;
+  --paper: #ffffff;
+  --canvas: #f4f7f5;
+  --line: #dbe4df;
+  --python-blue: #1677b7;
+  --python-blue-dark: #0d4167;
+  --python-yellow: #f2c94c;
+  --accent: #d95d39;
+  --shadow: 0 18px 45px rgba(18, 50, 67, 0.09);
+}
+
+html {
+  scroll-padding-top: 82px;
+}
+
+body {
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--canvas);
+  line-height: 1.75;
+}
+
+header {
+  padding: clamp(3.5rem, 9vw, 7rem) 1.25rem clamp(3rem, 7vw, 5rem);
+  text-align: left;
+  background: var(--python-blue-dark);
+  border-bottom: 8px solid var(--python-yellow);
+  isolation: isolate;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 40%;
+  background: repeating-linear-gradient(-12deg, transparent 0 28px, rgba(255,255,255,.06) 29px 30px);
+  z-index: -1;
+}
+
+header h1,
+header p {
+  width: min(1100px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: none;
+}
+
+header h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+header p {
+  max-width: 1100px;
+  color: #e8f4fa;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+nav {
+  padding: .75rem 1rem;
+  background: rgba(23, 32, 42, .97);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+nav ul {
+  max-width: 1100px;
+  margin: auto;
+  justify-content: flex-start;
+  gap: .35rem;
+}
+
+nav ul li a {
+  padding: .45rem .8rem;
+  color: #dce8ed;
+  border-radius: 4px;
+  font-size: .86rem;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: var(--ink);
+  background: var(--python-yellow);
+  transform: none;
+}
+
+.container {
+  max-width: 1100px;
+  padding: clamp(1.25rem, 4vw, 3rem) 1.25rem;
+}
+
+section {
+  margin-bottom: 1.5rem;
+  padding: clamp(1.35rem, 4vw, 2.75rem);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+section:hover {
+  transform: none;
+  box-shadow: 0 20px 50px rgba(18, 50, 67, .13);
+}
+
+section h2 {
+  margin-bottom: 1.25rem;
+  color: var(--python-blue-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  line-height: 1.2;
+  border-bottom: 3px solid var(--python-yellow);
+}
+
+section h3 {
+  color: var(--python-blue-dark);
+}
+
+section p {
+  max-width: 78ch;
+  text-align: left;
+}
+
+ul, ol {
+  padding-left: 1.25rem;
+  margin-left: 0;
+}
+
+li::marker {
+  color: var(--accent);
+}
+
+a {
+  color: var(--python-blue);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.table-wrapper {
+  margin: 1rem 0;
+}
+
+table {
+  box-shadow: none;
+  border: 1px solid var(--line);
+}
+
+table caption {
+  background: #eaf2f4;
+  color: var(--python-blue-dark);
+}
+
+table thead {
+  background: var(--python-blue-dark);
+}
+
+table tbody tr:nth-child(even),
+table tbody tr:hover {
+  background: #f1f7f5;
+}
+
+pre {
+  padding: 1.25rem;
+  background: #17202a;
+  border-left: 4px solid var(--python-yellow);
+  box-shadow: none;
+}
+
+code {
+  color: #a33d28;
+  background: #edf2f0;
+}
+
+.materias {
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  gap: 1rem;
+}
+
+.materia-card {
+  min-height: 150px;
+  padding: 1.2rem;
+  background: var(--python-blue-dark);
+  border-left: 4px solid var(--python-yellow);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.materia-card:hover {
+  background: var(--python-blue);
+  transform: translateY(-3px);
+  color: white;
+}
+
+.materia-card:focus-visible {
+  outline: 3px solid var(--python-yellow);
+  outline-offset: 3px;
+}
+
+.callout {
+  background: #fff9df;
+  border-left-color: var(--python-yellow);
+}
+
+.zen-box {
+  background: var(--python-blue-dark);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+footer {
+  margin-top: 2rem;
+  background: var(--ink);
+}
+
+footer .copyright {
+  margin-top: 15px;
+  opacity: .7;
+}
+
+.back-to-top {
+  background: var(--accent);
+  color: white;
+}
+
+@media (max-width: 480px) {
+  header {
+    text-align: center;
+  }
+
+  nav ul {
+    max-height: 12rem;
+    overflow-y: auto;
+  }
+
+  section {
+    padding: 1.25rem;
+  }
+}
