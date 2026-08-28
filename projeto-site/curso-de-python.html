@@ -517,8 +517,148 @@
       scroll-behavior: auto !important;
     }
   }
+
+  /* Melhorias visuais e exercícios */
+  body {
+    font-family: 'Trebuchet MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #183642;
+    background: #e8f0ed;
+  }
+
+  header {
+    background: linear-gradient(120deg, #123c46 0%, #1d6b67 58%, #e0ad2f 100%);
+    padding: 72px 20px 52px;
+  }
+
+  header h1 {
+    font-size: clamp(2.3em, 6vw, 4.4em);
+  }
+
+  nav {
+    background: #102f39;
+  }
+
+  section {
+    border: 1px solid #d6e3df;
+    border-radius: 8px;
+    box-shadow: 0 8px 22px rgba(24, 54, 66, 0.08);
+  }
+
+  section h2 {
+    color: #17635f;
+  }
+
+  .exercicios-intro {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .progresso {
+    background: #edf5f2;
+    border: 1px solid #c9ded8;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .progresso strong {
+    display: block;
+    color: #17635f;
+    font-size: 1.8em;
+  }
+
+  .desafios {
+    display: grid;
+    gap: 16px;
+  }
+
+  .desafio {
+    border: 1px solid #d6e3df;
+    border-left: 5px solid #e0ad2f;
+    border-radius: 6px;
+    padding: 20px;
+    background: #fbfdfc;
+  }
+
+  .desafio h3 {
+    margin-top: 0;
+    color: #17635f;
+  }
+
+  .opcoes {
+    display: grid;
+    gap: 8px;
+    margin: 14px 0;
+  }
+
+  .opcoes label {
+    cursor: pointer;
+    padding: 10px 12px;
+    border: 1px solid #c9ded8;
+    border-radius: 6px;
+  }
+
+  .opcoes label:hover {
+    background: #edf5f2;
+    border-color: #17635f;
+  }
+
+  .verificar {
+    background: #17635f;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+    padding: 10px 16px;
+  }
+
+  .feedback {
+    min-height: 1.7em;
+    margin: 10px 0 0;
+    font-weight: bold;
+  }
+
+  .feedback.correto { color: #18794e; }
+  .feedback.incorreto { color: #b4462f; }
+
+  .jornada-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 20px 0;
+  }
+
+  .jornada-etapa {
+    background: #edf5f2;
+    border-top: 4px solid #17635f;
+    border-radius: 6px;
+    padding: 18px;
+  }
+
+  .jornada-etapa strong {
+    display: block;
+    color: #17635f;
+    margin-bottom: 6px;
+  }
+
+  .projeto-guia {
+    background: #fff8dc;
+    border-left: 5px solid #e0ad2f;
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .exercicios-intro { grid-template-columns: 1fr; }
+    .jornada-grid { grid-template-columns: 1fr; }
+  }
 </style>
-<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -535,12 +675,14 @@
 <nav>
   <ul>
     <li><a href="#introducao">Introdução</a></li>
+    <li><a href="#jornada">Como estudar</a></li>
     <li><a href="#historia">História</a></li>
     <li><a href="#sintaxe">Sintaxe</a></li>
     <li><a href="#tipos">Tipos</a></li>
     <li><a href="#funcoes">Funções</a></li>
     <li><a href="#oo">OO</a></li>
     <li><a href="#bibliotecas">Bibliotecas</a></li>
+    <li><a href="#exercicios">Exercícios</a></li>
     <li><a href="#materias">Matérias</a></li>
     <li><a href="#recursos">Recursos</a></li>
   </ul>
@@ -558,6 +700,30 @@
     </div>
   </section>
 
+  <!-- ========== COMO USAR O CURSO ========== -->
+  <section id="jornada">
+    <h2>Como estudar neste curso</h2>
+    <p>Este material foi organizado para quem está começando e quer aprender fazendo. Você não precisa memorizar tudo de uma vez: leia o conceito, execute o exemplo, modifique uma parte e só então avance.</p>
+    <div class="jornada-grid">
+      <div class="jornada-etapa">
+        <strong>1. Entenda</strong>
+        <span>Leia a explicação e observe o problema que o recurso resolve.</span>
+      </div>
+      <div class="jornada-etapa">
+        <strong>2. Pratique</strong>
+        <span>Copie o exemplo, execute no Python e altere os valores para testar.</span>
+      </div>
+      <div class="jornada-etapa">
+        <strong>3. Construa</strong>
+        <span>Use o que aprendeu no projeto-guia e resolva os exercícios.</span>
+      </div>
+    </div>
+    <div class="projeto-guia">
+      <strong>Projeto-guia: controle de tarefas</strong>
+      <p>Ao longo da trilha, você vai evoluir um pequeno programa de terminal: primeiro cadastra tarefas, depois organiza prioridades, trata erros, salva os dados em arquivo e finalmente separa o código em módulos. Assim, cada conceito aparece em uma situação concreta.</p>
+    </div>
+  </section>
+
   <!-- ========== 2. HISTÓRIA ========== -->
   <section id="historia">
     <h2>2. História</h2>
@@ -571,14 +737,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>1989</td><td>Início do desenvolvimento por <strong>Guido van Rossum</strong> no CWI, na Holanda</td></tr>
-        <tr><td>1990</td><td>Desenvolvimento da primeira versão da linguagem</td></tr>
-        <tr><td>1991</td><td>Lançamento da versão <strong>0.9.0</strong> (fevereiro)</td></tr>
-        <tr><td>1994</td><td>Lançamento da versão <strong>1.0</strong></td></tr>
-        <tr><td>2000</td><td>Lançamento da versão <strong>2.0</strong></td></tr>
-        <tr><td>2008</td><td>Lançamento da versão <strong>3.0</strong> (não retrocompatível)</td></tr>
-        <tr><td>2020</td><td>Python 2 chega ao fim de vida (EOL)</td></tr>
-        <tr><td>Atual</td><td>Python 3.14 é a versão estável mais recente</td></tr>
+        <tr><td>1989</td><td>Durante as férias de Natal, <strong>Guido van Rossum</strong> começa a desenvolver Python no CWI, na Holanda</td></tr>
+        <tr><td>1990</td><td>Continuação do desenvolvimento da primeira implementação da linguagem</td></tr>
+        <tr><td>1991</td><td>Lançamento público da versão <strong>0.9.0</strong>, em fevereiro</td></tr>
+        <tr><td>1994</td><td>Lançamento da versão <strong>1.0</strong>, em janeiro</td></tr>
+        <tr><td>2000</td><td>Lançamento da versão <strong>2.0</strong>, em outubro</td></tr>
+        <tr><td>2008</td><td>Lançamento da versão <strong>3.0</strong>, com mudanças que quebraram parte da compatibilidade com o Python 2</td></tr>
+        <tr><td>2020</td><td>Python 2 chega oficialmente ao fim de vida em 1º de janeiro</td></tr>
+        <tr><td>2025</td><td>Lançamento do Python <strong>3.14</strong>, em 7 de outubro</td></tr>
       </tbody>
     </table>
     </div>
@@ -774,24 +940,25 @@ finally:
       <li><strong>NumPy</strong> — computação numérica</li>
       <li><strong>Pandas</strong> — análise de dados</li>
       <li><strong>Matplotlib</strong> — gráficos 2D</li>
-      <li><strong>scikit-learn</strong> — machine learning</li>
-      <li><strong>TensorFlow</strong> — deep learning (Google)</li>
-      <li><strong>PyTorch</strong> — deep learning (Meta)</li>
-      <li><strong>Hugging Face Transformers</strong> — LLMs pré-treinados</li>
+      <li><strong>scikit-learn</strong> — aprendizado de máquina</li>
+      <li><strong>TensorFlow</strong> — aprendizado profundo (Google)</li>
+      <li><strong>PyTorch</strong> — aprendizado profundo (Meta)</li>
+      <li><strong>Hugging Face Transformers</strong> — modelos de linguagem pré-treinados</li>
     </ul>
     <h3>Web</h3>
     <ul>
       <li><strong>Requests</strong> — requisições HTTP</li>
-      <li><strong>BeautifulSoup4</strong> — parsing HTML</li>
+      <li><strong>BeautifulSoup4</strong> — análise de HTML</li>
       <li><strong>FastAPI</strong> — APIs modernas</li>
       <li><strong>Flask</strong> — microframework</li>
-      <li><strong>Django</strong> — full-stack</li>
+      <li><strong>Django</strong> — desenvolvimento web completo</li>
     </ul>
   </section>
 
   <!-- ========== 12. BOAS PRÁTICAS ========== -->
   <section>
     <h2>12. Boas Práticas (PEP 8)</h2>
+    <p>Boas práticas tornam o código mais fácil de ler, revisar e manter, especialmente quando outras pessoas participam do projeto.</p>
     <ul>
       <li>Use <strong>4 espaços</strong> por nível de indentação</li>
       <li>Limite as linhas a <strong>79 caracteres</strong></li>
@@ -801,6 +968,49 @@ finally:
       <li><strong>Docstrings</strong> para documentar funções e classes</li>
       <li>Ferramentas úteis: <code>black</code>, <code>flake8</code>, <code>pylint</code>, <code>mypy</code></li>
     </ul>
+  </section>
+
+  <!-- ========== EXERCÍCIOS ========== -->
+  <section id="exercicios">
+    <h2>Exercícios rápidos</h2>
+    <div class="exercicios-intro">
+      <p>Teste seus conhecimentos. Escolha uma resposta e confira o resultado na hora.</p>
+      <div class="progresso" aria-live="polite"><strong id="acertos">0/3</strong>acertos</div>
+    </div>
+    <div class="desafios">
+      <article class="desafio" data-resposta="b">
+        <h3>1. Qual saída será exibida?</h3>
+        <pre><code>nome = "Ana"
+print(f"Olá, {nome}!")</code></pre>
+        <div class="opcoes">
+          <label><input type="radio" name="exercicio-1" value="a"> Olá, nome!</label>
+          <label><input type="radio" name="exercicio-1" value="b"> Olá, Ana!</label>
+          <label><input type="radio" name="exercicio-1" value="c"> O código gera um erro</label>
+        </div>
+        <button type="button" class="verificar">Verificar resposta</button>
+        <p class="feedback" aria-live="polite"></p>
+      </article>
+      <article class="desafio" data-resposta="c">
+        <h3>2. Qual tipo representa uma lista?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="exercicio-2" value="a"> <code>"Python"</code></label>
+          <label><input type="radio" name="exercicio-2" value="b"> <code>{"nome": "Bia"}</code></label>
+          <label><input type="radio" name="exercicio-2" value="c"> <code>["Python", "Java"]</code></label>
+        </div>
+        <button type="button" class="verificar">Verificar resposta</button>
+        <p class="feedback" aria-live="polite"></p>
+      </article>
+      <article class="desafio" data-resposta="a">
+        <h3>3. Para que serve <code>return</code>?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="exercicio-3" value="a"> Devolver um resultado da função</label>
+          <label><input type="radio" name="exercicio-3" value="b"> Repetir um laço</label>
+          <label><input type="radio" name="exercicio-3" value="c"> Importar uma biblioteca</label>
+        </div>
+        <button type="button" class="verificar">Verificar resposta</button>
+        <p class="feedback" aria-live="polite"></p>
+      </article>
+    </div>
   </section>
 
   <!-- ========== 13. AMBIENTES VIRTUAIS ========== -->
@@ -921,19 +1131,19 @@ deactivate</code></pre>
 
       <a href="https://scikit-learn.org/stable/tutorial/index.html" target="_blank" rel="noopener noreferrer" class="materia-card">
         <span class="numero">Módulo 14</span>
-        <span class="titulo">scikit-learn — Machine Learning</span>
+        <span class="titulo">scikit-learn — Aprendizado de máquina</span>
         <span class="link-externo">🔗 scikit-learn.org</span>
       </a>
 
       <a href="https://www.tensorflow.org/learn" target="_blank" rel="noopener noreferrer" class="materia-card">
         <span class="numero">Módulo 15</span>
-        <span class="titulo">TensorFlow — Deep Learning</span>
+        <span class="titulo">TensorFlow — Aprendizado profundo</span>
         <span class="link-externo">🔗 tensorflow.org/learn</span>
       </a>
 
       <a href="https://pytorch.org/tutorials/" target="_blank" rel="noopener noreferrer" class="materia-card">
         <span class="numero">Módulo 16</span>
-        <span class="titulo">PyTorch — Deep Learning</span>
+        <span class="titulo">PyTorch — Aprendizado profundo</span>
         <span class="link-externo">🔗 pytorch.org/tutorials</span>
       </a>
 
@@ -1089,6 +1299,32 @@ deactivate</code></pre>
 
     btn.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  (function() {
+    const desafios = document.querySelectorAll('.desafio');
+    const acertos = document.getElementById('acertos');
+    let respostasCertas = 0;
+
+    desafios.forEach(function(desafio) {
+      desafio.querySelector('.verificar').addEventListener('click', function() {
+        const selecionada = desafio.querySelector('input:checked');
+        const feedback = desafio.querySelector('.feedback');
+        if (!selecionada) {
+          feedback.textContent = 'Escolha uma alternativa primeiro.';
+          feedback.className = 'feedback incorreto';
+          return;
+        }
+        const acertou = selecionada.value === desafio.dataset.resposta;
+        if (acertou && !desafio.dataset.respondido) {
+          respostasCertas += 1;
+          desafio.dataset.respondido = 'true';
+        }
+        feedback.textContent = acertou ? 'Resposta correta!' : 'Ainda não. Tente novamente.';
+        feedback.className = acertou ? 'feedback correto' : 'feedback incorreto';
+        acertos.textContent = respostasCertas + '/' + desafios.length;
+      });
     });
   })();
 </script>
