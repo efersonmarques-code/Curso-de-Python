@@ -93,18 +93,18 @@
   }
 
   body {
-    font-family: 'Segoe UI', 'Segoe UI Emoji', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Trebuchet MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.7;
-    color: #2c3e50;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #183642;
+    background: #e8f0ed;
     min-height: 100vh;
   }
 
   /* ==================== HEADER ==================== */
   header {
-    background: linear-gradient(135deg, #306998 0%, #FFD43B 100%);
+    background: linear-gradient(120deg, #123c46 0%, #1d6b67 58%, #e0ad2f 100%);
     color: white;
-    padding: 60px 20px 40px;
+    padding: 72px 20px 52px;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     position: relative;
@@ -122,7 +122,7 @@
   }
 
   header h1 {
-    font-size: 3em;
+    font-size: clamp(2.3em, 6vw, 4.4em);
     margin-bottom: 10px;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
     position: relative;
@@ -136,7 +136,7 @@
 
   /* ==================== NAVEGAÇÃO ==================== */
   nav {
-    background: #2c3e50;
+    background: #102f39;
     padding: 15px 20px;
     position: sticky;
     top: 0;
@@ -194,8 +194,9 @@
     background: white;
     margin-bottom: 25px;
     padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    border: 1px solid #d6e3df;
+    box-shadow: 0 8px 22px rgba(24, 54, 66, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
@@ -205,7 +206,7 @@
   }
 
   section h2 {
-    color: #306998;
+    color: #17635f;
     font-size: 2em;
     margin-bottom: 20px;
     padding-bottom: 10px;
@@ -369,6 +370,95 @@
     color: #2c3e50;
   }
 
+  /* ==================== EXERCÍCIOS ==================== */
+  .exercicios-intro {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .progresso {
+    background: #edf5f2;
+    border: 1px solid #c9ded8;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .progresso strong {
+    display: block;
+    color: #17635f;
+    font-size: 1.8em;
+  }
+
+  .desafios {
+    display: grid;
+    gap: 16px;
+  }
+
+  .desafio {
+    border: 1px solid #d6e3df;
+    border-left: 5px solid #e0ad2f;
+    border-radius: 6px;
+    padding: 20px;
+    background: #fbfdfc;
+  }
+
+  .desafio h3 {
+    margin-top: 0;
+    color: #17635f;
+  }
+
+  .opcoes {
+    display: grid;
+    gap: 8px;
+    margin: 14px 0;
+  }
+
+  .opcoes label {
+    cursor: pointer;
+    padding: 10px 12px;
+    border: 1px solid #c9ded8;
+    border-radius: 6px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .opcoes label:hover {
+    background: #edf5f2;
+    border-color: #17635f;
+  }
+
+  .verificar {
+    background: #17635f;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+    padding: 10px 16px;
+  }
+
+  .verificar:hover {
+    background: #0f4b48;
+  }
+
+  .feedback {
+    min-height: 1.7em;
+    margin: 10px 0 0;
+    font-weight: bold;
+  }
+
+  .feedback.correto {
+    color: #18794e;
+  }
+
+  .feedback.incorreto {
+    color: #b4462f;
+  }
+
   .materia-card .titulo {
     font-size: 1.15em;
     font-weight: bold;
@@ -466,6 +556,10 @@
       grid-template-columns: 1fr;
     }
 
+    .exercicios-intro {
+      grid-template-columns: 1fr;
+    }
+
     .back-to-top {
       width: 45px;
       height: 45px;
@@ -535,12 +629,14 @@
 <nav>
   <ul>
     <li><a href="#introducao">Introdução</a></li>
+    <li><a href="#contextualizados">Trilha prática</a></li>
     <li><a href="#historia">História</a></li>
     <li><a href="#sintaxe">Sintaxe</a></li>
     <li><a href="#tipos">Tipos</a></li>
     <li><a href="#funcoes">Funções</a></li>
     <li><a href="#oo">OO</a></li>
     <li><a href="#bibliotecas">Bibliotecas</a></li>
+    <li><a href="#exercicios">Exercícios</a></li>
     <li><a href="#materias">Matérias</a></li>
     <li><a href="#recursos">Recursos</a></li>
   </ul>
@@ -557,6 +653,94 @@
       <strong>📌 Definição formal:</strong> Python é uma linguagem que suporta múltiplos paradigmas de programação e possui uma biblioteca padrão extensa, sendo distribuída sob a licença <em>Python Software Foundation License</em>.
     </div>
   </section>
+
+      <!-- ========== TRILHA CONTEXTUALIZADA ========== -->
+      <section id="contextualizados">
+      <h2>Trilha prática: temas 5, 6, 7, 8, 9, 10 e 13</h2>
+      <p>Esta trilha conecta os conceitos a uma situação comum: criar um pequeno controle de tarefas no terminal. Os exemplos podem ser copiados para um arquivo Python e executados separadamente.</p>
+
+      <h3>Tema 5: Funções</h3>
+      <p>Funções agrupam uma responsabilidade em um bloco reutilizável. Parâmetros recebem dados e <code>return</code> devolve um resultado para quem chamou.</p>
+      <pre><code>def adicionar_tarefa(tarefas, titulo, prioridade="normal"):
+    tarefa = {"titulo": titulo, "prioridade": prioridade}
+    tarefas.append(tarefa)
+    return tarefa
+
+tarefas = []
+nova_tarefa = adicionar_tarefa(tarefas, "Estudar funções", "alta")
+print(nova_tarefa)</code></pre>
+      <div class="callout"><strong>Na prática:</strong> uma função bem definida facilita testes, reduz repetição e permite trocar a implementação sem alterar todo o programa.</div>
+
+      <h3>Tema 6: Módulos e Pacotes</h3>
+      <p>Um módulo é um arquivo Python que reúne código relacionado. Pacotes organizam vários módulos em uma estrutura de projeto. A biblioteca padrão já oferece ferramentas prontas.</p>
+      <pre><code>from datetime import date
+from pathlib import Path
+
+arquivo = Path("tarefas.txt")
+print(f"Relatório criado em {date.today()}")
+print(f"Arquivo: {arquivo.resolve()}")</code></pre>
+      <p>Para criar um módulo próprio, salve funções em <code>tarefas.py</code> e use <code>from tarefas import adicionar_tarefa</code> em outro arquivo. Essa separação mantém o programa principal menor e mais fácil de manter.</p>
+
+      <h3>Tema 7: Dicionários e Conjuntos</h3>
+      <p>Dicionários representam registros com pares chave-valor. Conjuntos guardam valores únicos, sendo úteis para remover duplicatas ou comparar categorias.</p>
+      <pre><code>tarefa = {
+    "titulo": "Revisar módulos",
+    "tags": {"python", "estudo", "backend"}
+}
+
+tarefa["concluida"] = False
+tags_prioritarias = {"python", "projeto"}
+print(tarefa["tags"] &amp; tags_prioritarias)
+print(tarefa.get("prazo", "sem prazo"))</code></pre>
+      <div class="callout"><strong>Regra útil:</strong> use <code>dict.get()</code> quando uma chave puder não existir e conjuntos quando a ordem não importar.</div>
+
+      <h3>Tema 8: Tratamento de Exceções</h3>
+      <p>Exceções representam situações inesperadas, como uma entrada inválida ou um arquivo ausente. Capture apenas os erros que você sabe tratar e preserve uma mensagem clara para a pessoa usuária.</p>
+      <pre><code>try:
+    prioridade = int(input("Prioridade de 1 a 5: "))
+    if not 1 &lt;= prioridade &lt;= 5:
+        raise ValueError("a prioridade deve estar entre 1 e 5")
+except ValueError as erro:
+    print(f"Não foi possível cadastrar: {erro}")
+else:
+    print("Prioridade cadastrada")</code></pre>
+
+      <h3>Tema 9: Entrada e Saída de Dados</h3>
+      <p><code>input()</code> sempre retorna texto, enquanto <code>print()</code> exibe informações. Converta e valide os dados antes de usá-los no restante do programa.</p>
+      <pre><code>nome = input("Nome da tarefa: ").strip()
+if nome:
+    print(f"Tarefa criada: {nome}")
+else:
+    print("O nome não pode ficar vazio.")</code></pre>
+      <p>Em aplicações maiores, a mesma ideia vale para formulários web, arquivos CSV e respostas de APIs: a entrada chega como dados externos e a saída deve ser compreensível.</p>
+
+      <h3>Tema 10: Arquivos e Permissões</h3>
+      <p>O gerenciador de contexto <code>with</code> fecha o arquivo automaticamente. Prefira <code>pathlib</code> para trabalhar com caminhos e escolha a codificação explicitamente.</p>
+      <pre><code>from pathlib import Path
+
+arquivo = Path("tarefas.txt")
+arquivo.write_text("Estudar arquivos\n", encoding="utf-8")
+
+with arquivo.open(encoding="utf-8") as arquivo_aberto:
+    conteudo = arquivo_aberto.read()
+print(conteudo)
+print(f"Permissões registradas: {oct(arquivo.stat().st_mode &amp; 0o777)}")</code></pre>
+      <div class="callout"><strong>Segurança:</strong> permissões do sistema operacional controlam quem pode ler ou alterar um arquivo. Não confunda a extensão do arquivo com uma proteção de acesso.</div>
+
+      <h3>Tema 13: Bibliotecas e Frameworks</h3>
+      <p>Bibliotecas oferecem funções que o seu código chama; frameworks definem uma estrutura maior e orientam o fluxo da aplicação. A escolha deve considerar o problema, a documentação, a manutenção e o ecossistema.</p>
+      <pre><code># Biblioteca: você controla o fluxo
+import statistics
+
+tempos = [12.4, 10.8, 11.6]
+print(f"Tempo médio: {statistics.mean(tempos):.1f} minutos")
+
+# Exemplos de escolha por objetivo:
+# FastAPI: APIs com tipagem e documentação automática
+# Django: aplicações web completas
+# Pandas: análise de tabelas e dados</code></pre>
+      <p>Comece pela biblioteca padrão quando ela resolver o problema. Adicione dependências externas em um ambiente virtual e registre-as para que o projeto possa ser reproduzido.</p>
+      </section>
 
   <!-- ========== 2. HISTÓRIA ========== -->
   <section id="historia">
@@ -791,6 +975,52 @@ finally:
 
   <!-- ========== 12. BOAS PRÁTICAS ========== -->
   <section>
+
+  <!-- ========== EXERCÍCIOS ========== -->
+  <section id="exercicios">
+    <h2>Exercícios rápidos</h2>
+    <div class="exercicios-intro">
+      <p>Teste seus conhecimentos antes de avançar. Escolha uma resposta e confira o resultado na hora.</p>
+      <div class="progresso" aria-live="polite"><strong id="acertos">0/3</strong>acertos</div>
+    </div>
+
+    <div class="desafios">
+      <article class="desafio" data-resposta="b">
+        <h3>1. Qual saída aparece?</h3>
+        <pre><code>nome = "Ana"
+print(f"Olá, {nome}!")</code></pre>
+        <div class="opcoes">
+          <label><input type="radio" name="exercicio-1" value="a"> Olá, nome!</label>
+          <label><input type="radio" name="exercicio-1" value="b"> Olá, Ana!</label>
+          <label><input type="radio" name="exercicio-1" value="c"> O código gera um erro</label>
+        </div>
+        <button type="button" class="verificar">Verificar resposta</button>
+        <p class="feedback" aria-live="polite"></p>
+      </article>
+
+      <article class="desafio" data-resposta="c">
+        <h3>2. Qual tipo representa uma lista?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="exercicio-2" value="a"> <code>"Python"</code></label>
+          <label><input type="radio" name="exercicio-2" value="b"> <code>{"nome": "Bia"}</code></label>
+          <label><input type="radio" name="exercicio-2" value="c"> <code>["Python", "Java"]</code></label>
+        </div>
+        <button type="button" class="verificar">Verificar resposta</button>
+        <p class="feedback" aria-live="polite"></p>
+      </article>
+
+      <article class="desafio" data-resposta="a">
+        <h3>3. Para que serve <code>return</code>?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="exercicio-3" value="a"> Devolver um resultado da função</label>
+          <label><input type="radio" name="exercicio-3" value="b"> Repetir um laço</label>
+          <label><input type="radio" name="exercicio-3" value="c"> Importar uma biblioteca</label>
+        </div>
+        <button type="button" class="verificar">Verificar resposta</button>
+        <p class="feedback" aria-live="polite"></p>
+      </article>
+    </div>
+  </section>
     <h2>12. Boas Práticas (PEP 8)</h2>
     <ul>
       <li>Use <strong>4 espaços</strong> por nível de indentação</li>
@@ -1089,6 +1319,34 @@ deactivate</code></pre>
 
     btn.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  (function() {
+    const desafios = document.querySelectorAll('.desafio');
+    const acertos = document.getElementById('acertos');
+    let respostasCertas = 0;
+
+    desafios.forEach(function(desafio) {
+      desafio.querySelector('.verificar').addEventListener('click', function() {
+        const selecionada = desafio.querySelector('input:checked');
+        const feedback = desafio.querySelector('.feedback');
+
+        if (!selecionada) {
+          feedback.textContent = 'Escolha uma alternativa primeiro.';
+          feedback.className = 'feedback incorreto';
+          return;
+        }
+
+        const acertou = selecionada.value === desafio.dataset.resposta;
+        if (acertou && !desafio.dataset.respondido) {
+          respostasCertas += 1;
+          desafio.dataset.respondido = 'true';
+        }
+        feedback.textContent = acertou ? 'Resposta correta!' : 'Ainda não. Revise o conteúdo e tente novamente.';
+        feedback.className = acertou ? 'feedback correto' : 'feedback incorreto';
+        acertos.textContent = respostasCertas + '/' + desafios.length;
+      });
     });
   })();
 </script>
