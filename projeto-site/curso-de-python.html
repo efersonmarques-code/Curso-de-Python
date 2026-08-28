@@ -90,6 +90,7 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -98,6 +99,7 @@
     color: #2c3e50;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
+    overflow-x: hidden;
   }
 
   /* ==================== HEADER ==================== */
@@ -289,6 +291,8 @@
     padding: 20px;
     border-radius: 8px;
     overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
     margin: 15px 0;
     font-family: 'Consolas', 'Courier New', monospace;
     font-size: 0.95em;
@@ -304,6 +308,8 @@
     border-radius: 4px;
     font-family: 'Consolas', 'Courier New', monospace;
     font-size: 0.95em;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 
   pre code {
@@ -452,6 +458,7 @@
 
     section {
       padding: 20px;
+      max-width: 100%;
     }
 
     section h2 {
@@ -460,6 +467,7 @@
 
     .container {
       padding: 15px;
+      max-width: 100%;
     }
 
     .materias {
@@ -474,13 +482,19 @@
       font-size: 1.2em;
     }
 
-    /* Tabela responsiva em telas pequenas */
     table {
       font-size: 0.85em;
+      min-width: 100%;
     }
 
     table th, table td {
       padding: 8px 10px;
+      word-break: break-word;
+    }
+
+    .opcoes label {
+      display: block;
+      word-break: break-word;
     }
   }
 
@@ -489,7 +503,6 @@
       font-size: 100px;
     }
 
-    /* Menu em coluna no celular muito pequeno */
     nav ul {
       flex-direction: column;
       align-items: stretch;
@@ -501,10 +514,19 @@
       display: block;
     }
 
-    /* Bloco <pre> com fonte menor em mobile */
     pre {
       font-size: 0.8em;
       padding: 15px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    section {
+      padding: 18px 14px;
+    }
+
+    .container {
+      padding: 12px;
     }
   }
 
