@@ -262,8 +262,8 @@
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     border-radius: 8px;
     overflow: hidden;
   }
@@ -273,29 +273,42 @@
     text-align: left;
     padding: 12px 15px;
     font-weight: bold;
-    color: #2c3e50;
-    background: #ecf0f1;
+    color: #1f2d3d;
+    background: rgba(236, 240, 241, 0.85);
     border-radius: 8px 8px 0 0;
     font-size: 0.95em;
   }
 
   table thead {
-    background: #306998;
+    background: #1b3b4d;
     color: white;
   }
 
   table th, table td {
     padding: 12px 15px;
     text-align: left;
-    border-bottom: 1px solid #ecf0f1;
+    border-bottom: 1px solid #dfe9e7;
+    color: #1f2d3d;
+    vertical-align: top;
+  }
+
+  table thead th {
+    color: #ffffff;
+  }
+
+  table tbody td:first-child {
+    color: #1f2d3d;
+    font-weight: 500;
+    width: 82px;
+    white-space: nowrap;
   }
 
   table tbody tr:hover {
-    background: #f8f9fa;
+    background: #f5f8f7;
   }
 
   table tbody tr:nth-child(even) {
-    background: #fafbfc;
+    background: #fbfcfc;
   }
 
   /* ==================== BLOCOS DE CÓDIGO ==================== */
@@ -421,10 +434,14 @@
     border-radius: 6px;
     margin: 15px 0;
     box-shadow: 0 4px 12px rgba(255, 212, 59, 0.12);
+    color: #ffffff;
   }
 
-  .callout strong {
-    color: #ffd76d;
+  .callout strong,
+  .callout em,
+  .callout span,
+  .callout p {
+    color: #ffffff;
   }
 
   /* ==================== ZEN BOX ==================== */
@@ -638,11 +655,14 @@
     }
   }
 
-  /* Melhorias visuais e exercícios */
+  /* Premium dark theme refinado */
   body {
     font-family: 'Trebuchet MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #183642;
-    background: #e8f0ed;
+    color: #ffffff;
+    background:
+      radial-gradient(circle at top left, rgba(79, 150, 255, 0.22), transparent 28%),
+      radial-gradient(circle at bottom right, rgba(255, 212, 59, 0.12), transparent 32%),
+      linear-gradient(135deg, #081722 0%, #0d1f2d 38%, #111b2a 100%);
   }
 
   header {
@@ -655,17 +675,18 @@
   }
 
   nav {
-    background: #102f39;
+    background: rgba(16, 47, 57, 0.96);
   }
 
   section {
-    border: 1px solid #d6e3df;
+    border: 1px solid rgba(142, 197, 255, 0.18);
     border-radius: 8px;
-    box-shadow: 0 8px 22px rgba(24, 54, 66, 0.08);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+    background: rgba(15, 26, 39, 0.92);
   }
 
   section h2 {
-    color: #17635f;
+    color: #8ec5ff;
   }
 
   .exercicios-intro {
@@ -682,6 +703,7 @@
     border-radius: 8px;
     padding: 16px;
     text-align: center;
+    color: #f3f7ff;
   }
 
   .progresso strong {
@@ -696,16 +718,17 @@
   }
 
   .desafio {
-    border: 1px solid #d6e3df;
+    border: 1px solid rgba(142, 197, 255, 0.18);
     border-left: 5px solid #e0ad2f;
     border-radius: 6px;
     padding: 20px;
-    background: #fbfdfc;
+    background: rgba(20, 33, 42, 0.9);
+    color: #f3f7ff;
   }
 
   .desafio h3 {
     margin-top: 0;
-    color: #17635f;
+    color: #ffffff;
   }
 
   .opcoes {
@@ -717,13 +740,15 @@
   .opcoes label {
     cursor: pointer;
     padding: 10px 12px;
-    border: 1px solid #c9ded8;
+    border: 1px solid rgba(142, 197, 255, 0.2);
     border-radius: 6px;
+    background: rgba(255,255,255,0.02);
+    color: #f3f7ff;
   }
 
   .opcoes label:hover {
-    background: #edf5f2;
-    border-color: #17635f;
+    background: rgba(142, 197, 255, 0.08);
+    border-color: #8ec5ff;
   }
 
   .verificar {
@@ -747,10 +772,11 @@
     min-height: 1.7em;
     margin: 10px 0 0;
     font-weight: bold;
+    color: #f3f7ff;
   }
 
-  .feedback.correto { color: #18794e; }
-  .feedback.incorreto { color: #b4462f; }
+  .feedback.correto { color: #7ae0a4; }
+  .feedback.incorreto { color: #ff8d7a; }
 
   .jornada-grid {
     display: grid;
@@ -780,6 +806,17 @@
     padding: 18px 20px;
     margin-top: 20px;
     box-shadow: 0 4px 12px rgba(224, 173, 47, 0.12);
+    color: #ffffff;
+  }
+
+  .curiosidades-lista {
+    color: #ffffff;
+  }
+
+  .curiosidades-lista li,
+  .curiosidades-lista em,
+  .curiosidades-lista strong {
+    color: #ffffff;
   }
 
   @media (max-width: 768px) {
@@ -822,7 +859,7 @@
   <!-- ========== 1. O QUE É PYTHON ========== -->
   <section id="introducao">
     <h2>1. O que é Python?</h2>
-    <p><strong>Python</strong> é uma linguagem de programação de <strong>alto nível</strong>, <strong>interpretada</strong>, <strong>imperativa</strong>, <strong>orientada a objetos</strong>, <strong>funcional</strong>, com <strong>tipagem dinâmica</strong> e <strong>forte</strong>. Foi criada com foco na <strong>legibilidade do código</strong> e na <strong>produtividade do desenvolvedor</strong>.</p>
+    <p><strong>Python</strong> é uma linguagem de programação de <strong>alto nível</strong>, <strong>interpretada</strong>, <strong>imperativa</strong>, <strong>orientada a objetos</strong> e <strong>funcional</strong>, com <strong>tipagem dinâmica</strong> e <strong>forte</strong>. Foi criada com foco na <strong>legibilidade do código</strong> e na <strong>produtividade do desenvolvedor</strong>.</p>
     <div class="callout">
       <strong>📌 Definição formal:</strong> Python é uma linguagem que suporta múltiplos paradigmas de programação, possui uma biblioteca padrão extensa e é distribuída sob a licença <em>Python Software Foundation License</em>.
     </div>
@@ -847,7 +884,7 @@
       </div>
     </div>
     <div class="projeto-guia">
-      <strong>Projeto-guia: controle de tarefas</strong>
+      <strong>Projeto-guia: gerenciador de tarefas</strong>
       <p>Ao longo da trilha, você vai evoluir um pequeno programa de terminal: primeiro cadastra tarefas, depois organiza prioridades, trata erros, salva os dados em arquivo e, por fim, separa o código em módulos. Assim, cada conceito aparece em uma situação concreta.</p>
     </div>
   </section>
@@ -871,13 +908,13 @@
         <tr><td>1994</td><td>Lançamento da versão <strong>1.0</strong>, em janeiro</td></tr>
         <tr><td>2000</td><td>Lançamento da versão <strong>2.0</strong>, em outubro</td></tr>
         <tr><td>2008</td><td>Lançamento da versão <strong>3.0</strong>, com mudanças que quebraram parte da compatibilidade com o Python 2</td></tr>
-        <tr><td>2020</td><td>Python 2 chega oficialmente ao fim de vida em 1º de janeiro</td></tr>
+        <tr><td>2020</td><td>Python 2 chegou oficialmente ao fim de vida em 1º de janeiro</td></tr>
         <tr><td>2025</td><td>Lançamento do Python <strong>3.14</strong>, em 7 de outubro</td></tr>
       </tbody>
     </table>
     </div>
     <div class="callout">
-      <strong>🎬 Curiosidade:</strong> O nome "Python" veio do programa de TV britânico <em>Monty Python's Flying Circus</em>, do qual Guido era fã.
+      <strong>🎬 Curiosidade:</strong> O nome "Python" veio do programa de TV britânico <em>Monty Python's Flying Circus</em>, do qual Guido van Rossum era fã.
     </div>
   </section>
 
@@ -1078,7 +1115,7 @@ finally:
       <li><strong>Requests</strong> — requisições HTTP</li>
       <li><strong>BeautifulSoup4</strong> — análise de HTML</li>
       <li><strong>FastAPI</strong> — APIs modernas</li>
-      <li><strong>Flask</strong> — microframework</li>
+      <li><strong>Flask</strong> — microframework web</li>
       <li><strong>Django</strong> — desenvolvimento web completo</li>
     </ul>
   </section>
@@ -1386,13 +1423,13 @@ deactivate</code></pre>
   <!-- ========== 17. CURIOSIDADES ========== -->
   <section>
     <h2>17. Curiosidades</h2>
-    <ul>
-      <li>🐍 Python foi pensado para ser substituto do ABC e para lidar com exceções desde o início</li>
-      <li>🎭 O nome vem de <em>Monty Python</em>, grupo de comédia britânico</li>
+    <ul class="curiosidades-lista">
+      <li>🐍 Python foi criado para ser um substituto do ABC e para lidar com exceções desde o início</li>
+      <li>🎭 O nome vem do grupo de comédia britânico <em>Monty Python</em></li>
       <li>🏢 Empresas que usam Python: Google, Instagram, Netflix, Spotify, Uber, Dropbox, NASA e Reddit</li>
       <li>📦 O PyPI tem mais de 500 mil pacotes disponíveis</li>
       <li>🧠 Foi eleita "Linguagem do Ano" várias vezes pelo índice TIOBE</li>
-      <li>🇧🇷 Existe uma Python Brasil ativa desde 2005</li>
+      <li>🇧🇷 Existe uma comunidade Python Brasil ativa desde 2005</li>
     </ul>
   </section>
 
