@@ -525,11 +525,13 @@
     }
 
     .back-to-top {
-      width: 45px;
-      height: 45px;
-      bottom: 20px;
-      right: 20px;
-      font-size: 1.2em;
+      width: 42px;
+      height: 42px;
+      bottom: 18px;
+      right: 18px;
+      font-size: 1.05em;
+      opacity: 0.88;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.22);
     }
 
     .table-wrapper {
@@ -642,6 +644,12 @@
 
     .opcoes label {
       padding: 12px 10px;
+    }
+
+    .feedback {
+      font-size: 0.95rem;
+      min-height: 2.2em;
+      margin-top: 12px;
     }
   }
 
@@ -769,10 +777,14 @@
   }
 
   .feedback {
+    display: block;
     min-height: 1.7em;
     margin: 10px 0 0;
     font-weight: bold;
     color: #f3f7ff;
+    line-height: 1.4;
+    white-space: normal;
+    word-break: break-word;
   }
 
   .feedback.correto { color: #7ae0a4; }
@@ -1470,27 +1482,46 @@ deactivate</code></pre>
   (function() {
     const desafios = document.querySelectorAll('.desafio');
     const acertos = document.getElementById('acertos');
-    let respostasCertas = 0;
+
+    function atualizarContador() {
+      let respostasCertas = 0;
+      desafios.forEach(function(desafio) {
+        if (desafio.dataset.respondido === 'true') {
+          respostasCertas += 1;
+        }
+      });
+      acertos.textContent = respostasCertas + '/' + desafios.length;
+    }
 
     desafios.forEach(function(desafio) {
+      desafio.dataset.respondido = 'false';
+
       desafio.querySelector('.verificar').addEventListener('click', function() {
         const selecionada = desafio.querySelector('input:checked');
         const feedback = desafio.querySelector('.feedback');
+
         if (!selecionada) {
           feedback.textContent = 'Escolha uma alternativa primeiro.';
           feedback.className = 'feedback incorreto';
           return;
         }
+
         const acertou = selecionada.value === desafio.dataset.resposta;
-        if (acertou && !desafio.dataset.respondido) {
-          respostasCertas += 1;
+
+        if (acertou) {
           desafio.dataset.respondido = 'true';
+          feedback.textContent = 'Resposta correta!';
+          feedback.className = 'feedback correto';
+        } else {
+          feedback.textContent = 'Ainda não. Tente novamente.';
+          feedback.className = 'feedback incorreto';
         }
-        feedback.textContent = acertou ? 'Resposta correta!' : 'Ainda não. Tente novamente.';
-        feedback.className = acertou ? 'feedback correto' : 'feedback incorreto';
-        acertos.textContent = respostasCertas + '/' + desafios.length;
+
+        atualizarContador();
       });
     });
+
+    atualizarContador();
   })();
 </script>
 
