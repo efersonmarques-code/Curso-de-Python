@@ -1720,6 +1720,25 @@ deactivate</code></pre>
     <p><a href="http://efersonmarques-code.com/" target="_blank" rel="noopener noreferrer">Abrir o site</a></p>
   </section>
 
+  <section class="dns-error" style="margin-top: 30px; padding: 24px 20px; background: rgba(70, 12, 12, 0.5); border: 1px solid rgba(255, 120, 120, 0.5); border-radius: 16px;">
+    <h2>Não é possível acessar esse site</h2>
+    <p>Este erro acontece quando o navegador não consegue resolver o DNS do domínio e não consegue localizar o endereço do site.</p>
+    <p><strong>Mensagem do navegador:</strong> “Verifique se há um erro de digitação em efersonmarques-code.com. Se o endereço estiver correto, tente executar o Diagnóstico de Rede do Windows.”</p>
+    <p><strong>Código do erro:</strong> <code>DNS_PROBE_FINISHED_NXDOM</code></p>
+    <p>Isso normalmente indica que o domínio não está apontando para os registros DNS corretos do GitHub Pages.</p>
+    <ol>
+      <li>Confirme se o domínio foi digitado corretamente.</li>
+      <li>Entre no painel do seu provedor de domínio e ajuste os registros DNS.</li>
+      <li>Configure os registros do tipo <strong>A</strong> para os IPs do GitHub Pages:</li>
+    </ol>
+    <pre><code>185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153</code></pre>
+    <p>Também adicione um registro <strong>CNAME</strong> para <code>www</code> apontando para <code>efersonmarques-code.github.io</code>.</p>
+    <p>Depois, espere a propagação do DNS e volte ao GitHub Pages para confirmar o domínio no painel de configurações.</p>
+  </section>
+
 </main>
 
 <!-- ==================== FOOTER ==================== -->
