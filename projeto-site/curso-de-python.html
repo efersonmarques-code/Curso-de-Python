@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Curso completo de Python em português — do zero ao avançado. Aprenda sintaxe, POO, bibliotecas, frameworks e mais com links de estudo oficiais.">
 <meta name="keywords" content="python, curso python, aprender python, programação, tutorial python">
-<meta name="author" content="Curso de Python">
+<meta name="author" content="Luiz Henrique Marques Silva">
 <meta name="theme-color" content="#306998">
 
 <!-- Open Graph / Facebook -->
@@ -52,28 +52,34 @@
     right: 30px;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #306998 0%, #4a8fce 100%);
-    color: #FFD43B;
-    border: none;
+    background: linear-gradient(135deg, #1f5a8e 0%, #306998 35%, #4a8fce 100%);
+    color: #fff;
+    border: 2px solid rgba(255, 212, 59, 0.8);
     border-radius: 50%;
     font-size: 1.5em;
-    font-weight: bold;
+    font-weight: 800;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 0 0 3px rgba(255, 212, 59, 0.12), 0 8px 22px rgba(16, 25, 36, 0.45);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    pointer-events: none;
+    transition: all 0.25s ease;
     z-index: 99;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
   }
 
   .back-to-top.visible {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
 
   .back-to-top:hover {
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 8px 25px rgba(48, 105, 152, 0.5);
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 0 0 4px rgba(255, 212, 59, 0.18), 0 10px 28px rgba(48, 105, 152, 0.52);
   }
 
   .back-to-top:focus {
@@ -90,23 +96,28 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     font-family: 'Trebuchet MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.7;
-    color: #183642;
-    background: #e8f0ed;
+    color: #ffffff;
+    background:
+      radial-gradient(circle at top left, rgba(79, 150, 255, 0.22), transparent 28%),
+      radial-gradient(circle at bottom right, rgba(255, 212, 59, 0.12), transparent 32%),
+      linear-gradient(135deg, #081722 0%, #0d1f2d 38%, #111b2a 100%);
     min-height: 100vh;
+    overflow-x: hidden;
   }
 
   /* ==================== HEADER ==================== */
   header {
-    background: linear-gradient(120deg, #123c46 0%, #1d6b67 58%, #e0ad2f 100%);
+    background: linear-gradient(135deg, #0f2d41 0%, #1a5a8a 35%, #f1c644 100%);
     color: white;
-    padding: 72px 20px 52px;
+    padding: 70px 20px 48px;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 26px rgba(0,0,0,0.2);
     position: relative;
     overflow: hidden;
   }
@@ -114,7 +125,7 @@
   header::before {
     content: "🐍";
     position: absolute;
-    font-size: 250px;
+    font-size: 260px;
     opacity: 0.08;
     top: -30px;
     left: 50%;
@@ -122,21 +133,43 @@
   }
 
   header h1 {
-    font-size: clamp(2.3em, 6vw, 4.4em);
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    font-size: clamp(2.3em, 4vw, 3.6em);
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.28);
     position: relative;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
   }
 
   header p {
-    font-size: 1.2em;
-    opacity: 0.95;
+    font-size: clamp(0.95em, 1.3vw, 1.25em);
+    opacity: 0.98;
     position: relative;
+    display: inline-block;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 999px;
+    padding: 12px 22px;
+    backdrop-filter: blur(2px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    max-width: 90%;
+    line-height: 1.5;
+  }
+
+  header p:last-of-type {
+    margin-top: 14px;
+    font-size: 0.95em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    background: rgba(15, 26, 39, 0.22);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   }
 
   /* ==================== NAVEGAÇÃO ==================== */
   nav {
-    background: #102f39;
+    background: rgba(44, 62, 80, 0.96);
+    backdrop-filter: blur(8px);
     padding: 15px 20px;
     position: sticky;
     top: 0;
@@ -166,13 +199,48 @@
     background: #FFD43B;
     color: #1a252f;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 212, 59, 0.25);
   }
 
-  nav ul li a:focus {
+  nav ul li a:focus-visible {
     outline: 3px solid #FFD43B;
     outline-offset: 2px;
     background: #FFD43B;
     color: #1a252f;
+  }
+
+  .github-top {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 200;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #0f172a 0%, #1d4e89 100%);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 800;
+    border: 1px solid rgba(255, 212, 59, 0.45);
+    box-shadow: 0 10px 22px rgba(12, 26, 37, 0.32);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .github-top:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(25, 53, 80, 0.38);
+    text-decoration: none;
+  }
+
+  .github-top:focus-visible {
+    outline: 3px solid #FFD43B;
+    outline-offset: 3px;
+  }
+
+  .github-top .icon {
+    font-size: 1.2em;
   }
 
   /* ==================== CONTAINER ==================== */
@@ -184,6 +252,48 @@
     box-sizing: border-box;
   }
 
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1200px;
+      padding: 42px 26px 32px;
+    }
+
+    section {
+      padding: 38px 40px;
+    }
+
+    section h2 {
+      font-size: 2.2em;
+    }
+
+    .jornada-grid {
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .materias {
+      gap: 18px;
+    }
+
+    .materia-card {
+      min-height: 170px;
+    }
+
+    .sobre-autor {
+      grid-template-columns: 1.7fr 1fr;
+      gap: 24px;
+    }
+
+    .social-section {
+      padding: 38px 40px;
+    }
+
+    .github-top {
+      top: 16px;
+      right: 28px;
+    }
+  }
+
   /* Tap highlight transparente nos links (evita flash azul no mobile) */
   a {
     -webkit-tap-highlight-color: transparent;
@@ -191,22 +301,22 @@
 
   /* ==================== SEÇÕES ==================== */
   section {
-    background: white;
+    background: rgba(15, 26, 39, 0.92);
     margin-bottom: 25px;
     padding: 35px;
-    border-radius: 8px;
-    border: 1px solid #d6e3df;
-    box-shadow: 0 8px 22px rgba(24, 54, 66, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.22);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(148, 180, 220, 0.18);
   }
 
   section:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    box-shadow: 0 16px 34px rgba(0,0,0,0.25);
   }
 
   section h2 {
-    color: #17635f;
+    color: #8ec5ff;
     font-size: 2em;
     margin-bottom: 20px;
     padding-bottom: 10px;
@@ -215,7 +325,7 @@
   }
 
   section h3 {
-    color: #2c3e50;
+    color: #ffffff;
     font-size: 1.4em;
     margin-top: 25px;
     margin-bottom: 12px;
@@ -224,6 +334,7 @@
   section p {
     margin-bottom: 15px;
     text-align: justify;
+    color: #f3f7ff;
   }
 
   /* ==================== LISTAS ==================== */
@@ -234,6 +345,7 @@
 
   ul li, ol li {
     margin-bottom: 8px;
+    color: #f3f7ff;
   }
 
   /* ==================== TABELAS ==================== */
@@ -247,8 +359,8 @@
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     border-radius: 8px;
     overflow: hidden;
   }
@@ -258,44 +370,60 @@
     text-align: left;
     padding: 12px 15px;
     font-weight: bold;
-    color: #2c3e50;
-    background: #ecf0f1;
+    color: #1f2d3d;
+    background: rgba(236, 240, 241, 0.85);
     border-radius: 8px 8px 0 0;
     font-size: 0.95em;
   }
 
   table thead {
-    background: #306998;
+    background: #1b3b4d;
     color: white;
   }
 
   table th, table td {
     padding: 12px 15px;
     text-align: left;
-    border-bottom: 1px solid #ecf0f1;
+    border-bottom: 1px solid #dfe9e7;
+    color: #1f2d3d;
+    vertical-align: top;
+  }
+
+  table thead th {
+    color: #ffffff;
+  }
+
+  table tbody td:first-child {
+    color: #1f2d3d;
+    font-weight: 500;
+    width: 82px;
+    white-space: nowrap;
   }
 
   table tbody tr:hover {
-    background: #f8f9fa;
+    background: #f5f8f7;
   }
 
   table tbody tr:nth-child(even) {
-    background: #fafbfc;
+    background: #fbfcfc;
   }
 
   /* ==================== BLOCOS DE CÓDIGO ==================== */
   pre {
-    background: #1e272e;
+    background: #0b1722;
     color: #FFD43B;
     padding: 20px;
     border-radius: 8px;
     overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
     margin: 15px 0;
     font-family: 'Consolas', 'Courier New', monospace;
     font-size: 0.95em;
     line-height: 1.5;
-    box-shadow: inset 0 2px 10px rgba(0,0,0,0.3);
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.45);
     border-left: 4px solid #FFD43B;
+    border: 1px solid rgba(255, 212, 59, 0.18);
   }
 
   code {
@@ -305,6 +433,8 @@
     border-radius: 4px;
     font-family: 'Consolas', 'Courier New', monospace;
     font-size: 0.95em;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 
   pre code {
@@ -315,7 +445,7 @@
 
   /* ==================== LINKS ==================== */
   a {
-    color: #306998;
+    color: #8ec5ff;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -346,6 +476,16 @@
     flex-direction: column;
     gap: 8px;
     border-left: 5px solid #FFD43B;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .materia-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent 50%);
+    pointer-events: none;
   }
 
   .materia-card:hover {
@@ -462,25 +602,32 @@
   .materia-card .titulo {
     font-size: 1.15em;
     font-weight: bold;
+    color: #ffffff;
   }
 
   .materia-card .link-externo {
     font-size: 0.85em;
     opacity: 0.9;
     margin-top: 4px;
+    color: #eef6ff;
   }
 
   /* ==================== CALLOUTS ==================== */
   .callout {
-    background: #fff8dc;
+    background: linear-gradient(135deg, rgba(255, 248, 220, 0.16), rgba(255, 244, 184, 0.08));
     border-left: 5px solid #FFD43B;
     padding: 15px 20px;
     border-radius: 6px;
     margin: 15px 0;
+    box-shadow: 0 4px 12px rgba(255, 212, 59, 0.12);
+    color: #ffffff;
   }
 
-  .callout strong {
-    color: #306998;
+  .callout strong,
+  .callout em,
+  .callout span,
+  .callout p {
+    color: #ffffff;
   }
 
   /* ==================== ZEN BOX ==================== */
@@ -506,23 +653,154 @@
 
   /* ==================== FOOTER ==================== */
   footer {
-    background: #2c3e50;
+    background: linear-gradient(135deg, #1a2e3f 0%, #2c3e50 45%, #163843 100%);
     color: #ecf0f1;
     text-align: center;
-    padding: 30px 20px;
+    padding: 36px 20px 30px;
     margin-top: 40px;
+    border-top: 3px solid #FFD43B;
+    box-shadow: 0 -8px 25px rgba(0,0,0,0.12);
   }
 
   footer p {
-    margin: 5px 0;
+    margin: 8px 0;
+  }
+
+  footer strong {
+    color: #FFD43B;
+  }
+
+  footer .copyright {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
   }
 
   footer .coracao {
-    color: #e74c3c;
+    color: #ff6b6b;
+    text-shadow: 0 0 8px rgba(255, 107, 107, 0.35);
+  }
+
+  .social-section {
+    background: linear-gradient(135deg, rgba(15, 26, 39, 0.96), rgba(21, 38, 49, 0.96));
+    margin-bottom: 25px;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+    border: 1px solid rgba(148, 180, 220, 0.18);
+  }
+
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 12px;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #2c3e50 0%, #306998 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid rgba(255, 212, 59, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(48, 105, 152, 0.35);
+    text-decoration: none;
+  }
+
+  .social-icon {
+    font-size: 1.2em;
+  }
+
+  .sobre-autor {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .sobre-autor strong {
+    color: #FFD43B;
+  }
+
+  .autor-badge {
+    background: linear-gradient(135deg, rgba(48, 105, 152, 0.35), rgba(255, 212, 59, 0.18));
+    border: 1px solid rgba(255, 212, 59, 0.25);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  }
+
+  .avatar {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #FFD43B 0%, #306998 100%);
+    color: #0d1f2d;
+    font-size: 2.4em;
+    font-weight: 900;
+    margin-bottom: 12px;
+    box-shadow: 0 14px 28px rgba(48, 105, 152, 0.3);
+  }
+
+  .autor-badge strong {
+    display: block;
+    color: #ffffff;
+    font-size: 1.2em;
+    margin-bottom: 6px;
+  }
+
+  .autor-badge span {
+    color: #dfefff;
+    font-size: 0.9em;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #203d52 0%, #306998 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800;
+    border: 1px solid rgba(255, 212, 59, 0.38);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 22px rgba(48, 105, 152, 0.24);
+  }
+
+  .social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(48, 105, 152, 0.36);
+    text-decoration: none;
   }
 
   /* ==================== RESPONSIVO ==================== */
   @media (max-width: 768px) {
+    .github-top {
+      top: 12px;
+      right: 12px;
+      padding: 8px 12px;
+      font-size: 0.8em;
+    }
+
     header h1 {
       font-size: 2em;
     }
@@ -542,6 +820,7 @@
 
     section {
       padding: 20px;
+      max-width: 100%;
     }
 
     section h2 {
@@ -550,6 +829,7 @@
 
     .container {
       padding: 15px;
+      max-width: 100%;
     }
 
     .materias {
@@ -561,44 +841,132 @@
     }
 
     .back-to-top {
-      width: 45px;
-      height: 45px;
-      bottom: 20px;
-      right: 20px;
+      width: 44px;
+      height: 44px;
+      bottom: 18px;
+      right: 18px;
       font-size: 1.2em;
+      border-width: 1.5px;
+      opacity: 0.96;
+      box-shadow: 0 0 0 2px rgba(255, 212, 59, 0.12), 0 5px 16px rgba(16, 25, 36, 0.35);
     }
 
-    /* Tabela responsiva em telas pequenas */
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 15px 0;
+    }
+
     table {
-      font-size: 0.85em;
+      font-size: 0.8em;
+      min-width: 520px;
+      width: 100%;
     }
 
     table th, table td {
       padding: 8px 10px;
+      word-break: break-word;
+      vertical-align: top;
+    }
+
+    .opcoes label {
+      display: block;
+      word-break: break-word;
     }
   }
 
   @media (max-width: 480px) {
+    header {
+      padding: 42px 16px 28px;
+    }
+
     header::before {
       font-size: 100px;
     }
 
-    /* Menu em coluna no celular muito pequeno */
+    header p {
+      font-size: 0.95rem;
+      padding: 8px 14px;
+    }
+
+    nav {
+      padding: 10px 12px;
+      overflow: hidden;
+    }
+
     nav ul {
-      flex-direction: column;
-      align-items: stretch;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      gap: 8px;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      padding-bottom: 2px;
+    }
+
+    nav ul li {
+      flex: 0 0 auto;
     }
 
     nav ul li a {
       text-align: center;
-      padding: 10px;
+      padding: 8px 10px;
       display: block;
+      font-size: 0.72em;
+      line-height: 1.2;
+      min-height: 36px;
+      white-space: nowrap;
     }
 
-    /* Bloco <pre> com fonte menor em mobile */
+    footer {
+      padding: 24px 12px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .copyright {
+      white-space: normal;
+      word-break: break-word;
+      line-height: 1.5;
+    }
+
+    .progresso {
+      font-size: 0.95rem;
+      padding: 12px 10px;
+    }
+
+    .progresso strong {
+      font-size: 1.5em;
+    }
+
     pre {
       font-size: 0.8em;
       padding: 15px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    section {
+      padding: 18px 14px;
+    }
+
+    .container {
+      padding: 12px;
+    }
+
+    .opcoes label {
+      padding: 12px 10px;
+    }
+
+    .feedback {
+      font-size: 0.95rem;
+      min-height: 2.2em;
+      margin-top: 12px;
     }
   }
 
@@ -611,8 +979,188 @@
       scroll-behavior: auto !important;
     }
   }
+
+  /* Premium dark theme refinado */
+  body {
+    font-family: 'Trebuchet MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    background:
+      radial-gradient(circle at top left, rgba(79, 150, 255, 0.22), transparent 28%),
+      radial-gradient(circle at bottom right, rgba(255, 212, 59, 0.12), transparent 32%),
+      linear-gradient(135deg, #081722 0%, #0d1f2d 38%, #111b2a 100%);
+  }
+
+  header {
+    background: linear-gradient(120deg, #123c46 0%, #1d6b67 58%, #e0ad2f 100%);
+    padding: 72px 20px 52px;
+  }
+
+  header h1 {
+    font-size: clamp(2.3em, 6vw, 4.4em);
+  }
+
+  nav {
+    background: rgba(16, 47, 57, 0.96);
+  }
+
+  section {
+    border: 1px solid rgba(142, 197, 255, 0.18);
+    border-radius: 8px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+    background: rgba(15, 26, 39, 0.92);
+  }
+
+  section h2 {
+    color: #8ec5ff;
+  }
+
+  .exercicios-intro {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .progresso {
+    background: rgba(21, 38, 49, 0.9);
+    border: 1px solid rgba(142, 197, 255, 0.25);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    color: #f3f7ff;
+  }
+
+  .progresso strong {
+    display: block;
+    color: #8ec5ff;
+    font-size: 1.8em;
+  }
+
+  .desafios {
+    display: grid;
+    gap: 16px;
+  }
+
+  .desafio {
+    border: 1px solid rgba(142, 197, 255, 0.18);
+    border-left: 5px solid #e0ad2f;
+    border-radius: 6px;
+    padding: 20px;
+    background: rgba(20, 33, 42, 0.9);
+    color: #f3f7ff;
+  }
+
+  .desafio h3 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .opcoes {
+    display: grid;
+    gap: 8px;
+    margin: 14px 0;
+  }
+
+  .opcoes label {
+    cursor: pointer;
+    padding: 10px 12px;
+    border: 1px solid rgba(142, 197, 255, 0.2);
+    border-radius: 6px;
+    background: rgba(255,255,255,0.02);
+    color: #f3f7ff;
+  }
+
+  .opcoes label:hover {
+    background: rgba(142, 197, 255, 0.08);
+    border-color: #8ec5ff;
+  }
+
+  .verificar {
+    background: linear-gradient(135deg, #17635f 0%, #1f7d75 100%);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+    padding: 10px 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .verificar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(23, 99, 95, 0.25);
+  }
+
+  .feedback {
+    display: block;
+    min-height: 1.7em;
+    margin: 10px 0 0;
+    font-weight: bold;
+    color: #f3f7ff;
+    line-height: 1.4;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .feedback.correto { color: #7ae0a4; }
+  .feedback.incorreto { color: #ff8d7a; }
+
+  .jornada-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 20px 0;
+  }
+
+  .jornada-etapa {
+    background: rgba(21, 38, 49, 0.9);
+    border-top: 4px solid #8ec5ff;
+    border-radius: 6px;
+    padding: 18px;
+    color: #f3f7ff;
+  }
+
+  .jornada-etapa strong {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 6px;
+  }
+
+  .projeto-guia {
+    background: linear-gradient(135deg, rgba(255, 248, 220, 0.12), rgba(247, 240, 199, 0.06));
+    border-left: 5px solid #e0ad2f;
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(224, 173, 47, 0.12);
+    color: #ffffff;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .projeto-guia strong,
+  .projeto-guia p {
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .curiosidades-lista {
+    color: #ffffff;
+  }
+
+  .curiosidades-lista li,
+  .curiosidades-lista em,
+  .curiosidades-lista strong {
+    color: #ffffff;
+  }
+
+  @media (max-width: 768px) {
+    .exercicios-intro { grid-template-columns: 1fr; }
+    .jornada-grid { grid-template-columns: 1fr; }
+  }
 </style>
-<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -623,13 +1171,14 @@
 <header>
   <h1>🐍 Curso de Python</h1>
   <p>Guia completo para aprender Python do zero ao avançado</p>
+  <p style="margin-top: 14px; font-size: 0.95em; font-weight: 700; letter-spacing: 0.04em; background: rgba(15, 26, 39, 0.22); border: 1px solid rgba(255,255,255,0.18); box-shadow: 0 4px 12px rgba(0,0,0,0.12); max-width: 90%;">Por Luiz Henrique Marques Silva</p>
 </header>
 
-<!-- ==================== NAVEGAÇÃO ==================== -->
 <nav>
   <ul>
     <li><a href="#introducao">Introdução</a></li>
     <li><a href="#contextualizados">Trilha prática</a></li>
+    <li><a href="#jornada">Como estudar</a></li>
     <li><a href="#historia">História</a></li>
     <li><a href="#sintaxe">Sintaxe</a></li>
     <li><a href="#tipos">Tipos</a></li>
@@ -639,19 +1188,56 @@
     <li><a href="#exercicios">Exercícios</a></li>
     <li><a href="#materias">Matérias</a></li>
     <li><a href="#recursos">Recursos</a></li>
+    <li><a href="#contato">Contato</a></li>
   </ul>
 </nav>
 
-<!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
-<main id="conteudo-principal" class="container">
-
-  <!-- ========== 1. O QUE É PYTHON ========== -->
-  <section id="introducao">
-    <h2>1. O que é Python?</h2>
-    <p><strong>Python</strong> é uma linguagem de programação de <strong>alto nível</strong>, <strong>interpretada</strong>, <strong>de script</strong>, <strong>imperativa</strong>, <strong>orientada a objetos</strong>, <strong>funcional</strong>, de <strong>tipagem dinâmica</strong> e <strong>forte</strong>. Foi projetada com foco na <strong>legibilidade do código</strong> e na <strong>produtividade do desenvolvedor</strong>.</p>
-    <div class="callout">
-      <strong>📌 Definição formal:</strong> Python é uma linguagem que suporta múltiplos paradigmas de programação e possui uma biblioteca padrão extensa, sendo distribuída sob a licença <em>Python Software Foundation License</em>.
+<a href="https://github.com/efersonmarques-code" class="github-top" target="_blank" rel="noopener noreferrer" aria-label="Perfil do GitHub de Luiz Henrique Marques Silva">
+  <span class="icon">🐙</span>
+  <span>GitHub</span>
+</a>
+  <!-- ========== COMO USAR O CURSO ========== -->
+  <section id="jornada">
+    <h2>Como estudar neste curso</h2>
+    <p>Este material foi organizado para quem está começando e quer aprender fazendo. Você não precisa memorizar tudo de uma vez: leia o conceito, execute o exemplo, modifique uma parte e só então avance.</p>
+    <div class="jornada-grid">
+      <div class="jornada-etapa">
+        <strong>1. Entenda</strong>
+        <span>Leia a explicação e compreenda o problema que o recurso resolve.</span>
+      </div>
+      <div class="jornada-etapa">
+        <strong>2. Pratique</strong>
+        <span>Copie o exemplo, execute no Python e altere os valores para testar.</span>
+      </div>
+      <div class="jornada-etapa">
+        <strong>3. Construa</strong>
+        <span>Use o que aprendeu no projeto-guia e resolva os exercícios.</span>
+      </div>
     </div>
+    <div class="projeto-guia">
+      <strong>Projeto-guia: gerenciador de tarefas</strong>
+      <p>Ao longo do curso, você vai desenvolver um pequeno programa de terminal: primeiro cadastra tarefas, depois organiza prioridades, trata erros, salva os dados em arquivo e, por fim, separa o código em módulos. Assim, cada conceito aparece em uma situação concreta.</p>
+    </div>
+  </section>
+
+  <!-- ========== ALTERANDO O TÍTULO E A DESCRIÇÃO ========== -->
+  <section id="titulo-descricao">
+    <h2>Alterando o título e a descrição</h2>
+    <p>Por padrão, o título do site é <strong>username.github.io</strong>. Para personalizar a página do GitHub Pages, você pode alterar o título e a descrição do site editando o arquivo <code>_config.yml</code> no repositório.</p>
+
+    <ol>
+      <li>Abra a guia <strong>Código</strong> do repositório.</li>
+      <li>Verifique se o arquivo <code>_config.yml</code> já existe. Se não existir, crie um novo arquivo com esse nome.</li>
+      <li>Abra o arquivo <code>_config.yml</code> e clique em <strong>Editar</strong>.</li>
+      <li>Adicione duas linhas: <code>title:</code> com o título desejado e <code>description:</code> com a descrição do site.</li>
+      <li>Quando terminar, clique em <strong>Confirmar alterações</strong>.</li>
+    </ol>
+
+    <pre><code>theme: jekyll-theme-minimal
+title: Octocat's homepage
+description: Bookmark this to keep an eye on my project updates!</code></pre>
+
+    <p>Esse ajuste ajuda a melhorar a aparência e a identidade do seu site no GitHub Pages, além de deixar o nome e a introdução mais profissionais e compreensíveis para visitantes.</p>
   </section>
 
       <!-- ========== TRILHA CONTEXTUALIZADA ========== -->
@@ -755,19 +1341,19 @@ print(f"Tempo médio: {statistics.mean(tempos):.1f} minutos")
         </tr>
       </thead>
       <tbody>
-        <tr><td>1989</td><td>Início do desenvolvimento por <strong>Guido van Rossum</strong> no CWI, na Holanda</td></tr>
-        <tr><td>1990</td><td>Desenvolvimento da primeira versão da linguagem</td></tr>
-        <tr><td>1991</td><td>Lançamento da versão <strong>0.9.0</strong> (fevereiro)</td></tr>
-        <tr><td>1994</td><td>Lançamento da versão <strong>1.0</strong></td></tr>
-        <tr><td>2000</td><td>Lançamento da versão <strong>2.0</strong></td></tr>
-        <tr><td>2008</td><td>Lançamento da versão <strong>3.0</strong> (não retrocompatível)</td></tr>
-        <tr><td>2020</td><td>Python 2 chega ao fim de vida (EOL)</td></tr>
-        <tr><td>Atual</td><td>Python 3.14 é a versão estável mais recente</td></tr>
+        <tr><td>1989</td><td>Durante as férias de Natal, <strong>Guido van Rossum</strong> começa a desenvolver Python no CWI, na Holanda</td></tr>
+        <tr><td>1990</td><td>Continuação do desenvolvimento da primeira implementação da linguagem</td></tr>
+        <tr><td>1991</td><td>Lançamento público da versão <strong>0.9.0</strong>, em fevereiro</td></tr>
+        <tr><td>1994</td><td>Lançamento da versão <strong>1.0</strong>, em janeiro</td></tr>
+        <tr><td>2000</td><td>Lançamento da versão <strong>2.0</strong>, em outubro</td></tr>
+        <tr><td>2008</td><td>Lançamento da versão <strong>3.0</strong>, com mudanças que quebraram parte da compatibilidade com o Python 2</td></tr>
+        <tr><td>2020</td><td>Python 2 chegou oficialmente ao fim de vida em 1º de janeiro</td></tr>
+        <tr><td>2025</td><td>Lançamento do Python <strong>3.14</strong>, em 7 de outubro</td></tr>
       </tbody>
     </table>
     </div>
     <div class="callout">
-      <strong>🎬 Curiosidade:</strong> O nome "Python" veio do programa de TV britânico <em>Monty Python's Flying Circus</em>, do qual Guido era fã.
+      <strong>🎬 Curiosidade:</strong> O nome "Python" veio do programa de TV britânico <em>Monty Python's Flying Circus</em>, do qual Guido van Rossum era fã.
     </div>
   </section>
 
@@ -779,10 +1365,10 @@ print(f"Tempo médio: {statistics.mean(tempos):.1f} minutos")
       <li>✅ Multiparadigma — suporta POO, funcional, procedural e imperativa</li>
       <li>✅ Tipagem dinâmica — não é necessário declarar o tipo das variáveis</li>
       <li>✅ Interpretada — o código é compilado automaticamente para bytecode e executado pelo interpretador</li>
-      <li>✅ Multiplataforma — Windows, macOS, Linux e outros</li>
+      <li>✅ Multiplataforma — funciona em Windows, macOS, Linux e outros sistemas</li>
       <li>✅ Gerenciamento automático de memória (garbage collector)</li>
-      <li>✅ Baterias incluídas — biblioteca padrão muito extensa</li>
-      <li>✅ Indentação obrigatória — força código organizado</li>
+      <li>✅ Baterias incluídas — a biblioteca padrão é muito extensa</li>
+      <li>✅ Indentação obrigatória — ajuda a manter o código organizado</li>
       <li>✅ Código aberto e gratuito</li>
       <li>✅ Grande comunidade global</li>
     </ul>
@@ -958,18 +1544,18 @@ finally:
       <li><strong>NumPy</strong> — computação numérica</li>
       <li><strong>Pandas</strong> — análise de dados</li>
       <li><strong>Matplotlib</strong> — gráficos 2D</li>
-      <li><strong>scikit-learn</strong> — machine learning</li>
-      <li><strong>TensorFlow</strong> — deep learning (Google)</li>
-      <li><strong>PyTorch</strong> — deep learning (Meta)</li>
-      <li><strong>Hugging Face Transformers</strong> — LLMs pré-treinados</li>
+      <li><strong>scikit-learn</strong> — aprendizado de máquina</li>
+      <li><strong>TensorFlow</strong> — aprendizado profundo (Google)</li>
+      <li><strong>PyTorch</strong> — aprendizado profundo (Meta)</li>
+      <li><strong>Hugging Face Transformers</strong> — modelos de linguagem pré-treinados</li>
     </ul>
     <h3>Web</h3>
     <ul>
       <li><strong>Requests</strong> — requisições HTTP</li>
-      <li><strong>BeautifulSoup4</strong> — parsing HTML</li>
+      <li><strong>BeautifulSoup4</strong> — análise de HTML</li>
       <li><strong>FastAPI</strong> — APIs modernas</li>
-      <li><strong>Flask</strong> — microframework</li>
-      <li><strong>Django</strong> — full-stack</li>
+      <li><strong>Flask</strong> — microframework web</li>
+      <li><strong>Django</strong> — desenvolvimento web completo</li>
     </ul>
   </section>
 
@@ -1022,6 +1608,7 @@ print(f"Olá, {nome}!")</code></pre>
     </div>
   </section>
     <h2>12. Boas Práticas (PEP 8)</h2>
+    <p>Boas práticas tornam o código mais fácil de ler, revisar e manter, especialmente quando outras pessoas participam do projeto.</p>
     <ul>
       <li>Use <strong>4 espaços</strong> por nível de indentação</li>
       <li>Limite as linhas a <strong>79 caracteres</strong></li>
@@ -1031,6 +1618,49 @@ print(f"Olá, {nome}!")</code></pre>
       <li><strong>Docstrings</strong> para documentar funções e classes</li>
       <li>Ferramentas úteis: <code>black</code>, <code>flake8</code>, <code>pylint</code>, <code>mypy</code></li>
     </ul>
+  </section>
+
+  <!-- ========== EXERCÍCIOS ========== -->
+  <section id="exercicios">
+    <h2>Exercícios rápidos</h2>
+    <div class="exercicios-intro">
+      <p>Teste seus conhecimentos. Escolha uma resposta e confira o resultado na hora.</p>
+      <div class="progresso" aria-live="polite"><strong id="acertos">0/3</strong> acertos</div>
+    </div>
+    <div class="desafios">
+      <article class="desafio" data-resposta="b">
+        <h3>1. Qual saída será exibida?</h3>
+        <pre><code>nome = "Ana"
+print(f"Olá, {nome}!")</code></pre>
+        <div class="opcoes">
+          <label><input type="radio" name="exercicio-1" value="a"> Olá, nome!</label>
+          <label><input type="radio" name="exercicio-1" value="b"> Olá, Ana!</label>
+          <label><input type="radio" name="exercicio-1" value="c"> O código gera um erro</label>
+        </div>
+        <button type="button" class="verificar">Verificar resposta</button>
+        <p class="feedback" aria-live="polite"></p>
+      </article>
+      <article class="desafio" data-resposta="c">
+        <h3>2. Qual tipo representa uma lista?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="exercicio-2" value="a"> <code>"Python"</code></label>
+          <label><input type="radio" name="exercicio-2" value="b"> <code>{"nome": "Bia"}</code></label>
+          <label><input type="radio" name="exercicio-2" value="c"> <code>["Python", "Java"]</code></label>
+        </div>
+        <button type="button" class="verificar">Verificar resposta</button>
+        <p class="feedback" aria-live="polite"></p>
+      </article>
+      <article class="desafio" data-resposta="a">
+        <h3>3. Para que serve <code>return</code>?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="exercicio-3" value="a"> Devolver um resultado da função</label>
+          <label><input type="radio" name="exercicio-3" value="b"> Repetir um laço</label>
+          <label><input type="radio" name="exercicio-3" value="c"> Importar uma biblioteca</label>
+        </div>
+        <button type="button" class="verificar">Verificar resposta</button>
+        <p class="feedback" aria-live="polite"></p>
+      </article>
+    </div>
   </section>
 
   <!-- ========== 13. AMBIENTES VIRTUAIS ========== -->
@@ -1057,7 +1687,7 @@ deactivate</code></pre>
       Explícito é melhor que implícito.<br>
       Simples é melhor que complexo.<br>
       Legibilidade conta.<br>
-      Deveria haver um — e preferencialmente só um — modo óbvio para fazer algo.<br>
+      Deveria haver um — e, preferencialmente, apenas um — modo óbvio para fazer algo.<br>
       Agora é melhor que nunca.<br>
       Se a implementação é difícil de explicar, é uma má ideia.<br>
       Namespaces são uma grande ideia — vamos fazer mais desses!
@@ -1151,19 +1781,19 @@ deactivate</code></pre>
 
       <a href="https://scikit-learn.org/stable/tutorial/index.html" target="_blank" rel="noopener noreferrer" class="materia-card">
         <span class="numero">Módulo 14</span>
-        <span class="titulo">scikit-learn — Machine Learning</span>
+        <span class="titulo">scikit-learn — Aprendizado de máquina</span>
         <span class="link-externo">🔗 scikit-learn.org</span>
       </a>
 
       <a href="https://www.tensorflow.org/learn" target="_blank" rel="noopener noreferrer" class="materia-card">
         <span class="numero">Módulo 15</span>
-        <span class="titulo">TensorFlow — Deep Learning</span>
+        <span class="titulo">TensorFlow — Aprendizado profundo</span>
         <span class="link-externo">🔗 tensorflow.org/learn</span>
       </a>
 
       <a href="https://pytorch.org/tutorials/" target="_blank" rel="noopener noreferrer" class="materia-card">
         <span class="numero">Módulo 16</span>
-        <span class="titulo">PyTorch — Deep Learning</span>
+        <span class="titulo">PyTorch — Aprendizado profundo</span>
         <span class="link-externo">🔗 pytorch.org/tutorials</span>
       </a>
 
@@ -1278,14 +1908,44 @@ deactivate</code></pre>
   <!-- ========== 17. CURIOSIDADES ========== -->
   <section>
     <h2>17. Curiosidades</h2>
-    <ul>
-      <li>🐍 Python foi pensado para ser substituto do ABC e para lidar com exceções desde o início</li>
-      <li>🎭 O nome vem de <em>Monty Python</em>, grupo de comédia britânico</li>
-      <li>🏢 Empresas que usam Python: Google, Instagram, Netflix, Spotify, Uber, Dropbox, NASA, Reddit</li>
-      <li>📦 O PyPI tem mais de 500.000 pacotes disponíveis</li>
+    <ul class="curiosidades-lista">
+      <li>🐍 Python foi criado para ser um substituto do ABC e para lidar com exceções desde o início</li>
+      <li>🎭 O nome vem do grupo de comédia britânico <em>Monty Python</em></li>
+      <li>🏢 Empresas que usam Python: Google, Instagram, Netflix, Spotify, Uber, Dropbox, NASA e Reddit</li>
+      <li>📦 O PyPI tem mais de 500 mil pacotes disponíveis</li>
       <li>🧠 Foi eleita "Linguagem do Ano" várias vezes pelo índice TIOBE</li>
-      <li>🇧🇷 Existe uma Python Brasil ativa desde 2005</li>
+      <li>🇧🇷 Existe uma comunidade Python Brasil ativa desde 2005</li>
     </ul>
+  </section>
+
+  <section class="social-section" id="contato">
+    <h2>Sobre o autor</h2>
+    <div class="sobre-autor">
+      <div>
+        <p>Olá! Meu nome é <strong>Luiz Henrique Marques Silva</strong>, e este projeto foi criado para compartilhar conhecimento de forma clara, prática e acessível sobre Python.</p>
+        <p>O objetivo aqui é ajudar iniciantes a entender os fundamentos da linguagem, explorar conceitos importantes e evoluir com estudo contínuo e execução de exercícios.</p>
+        <div class="social-links" style="margin-top: 18px;">
+          <a href="https://github.com/efersonmarques-code" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Perfil do GitHub de Luiz Henrique Marques Silva">
+            <span class="social-icon">🐙</span>
+            <span>github.com/efersonmarques-code</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="autor-badge">
+        <div class="avatar">LH</div>
+        <strong>Luiz Henrique</strong>
+        <span>Estudante de Python & tecnologia</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="github-pages-info" style="margin-top: 30px; padding: 24px 20px; background: rgba(15, 35, 48, 0.6); border: 1px solid rgba(255, 212, 59, 0.25); border-radius: 16px;">
+    <h2>Páginas do GitHub</h2>
+    <p>O <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a> foi projetado para hospedar páginas pessoais, organizacionais ou de projetos a partir de um repositório do GitHub.</p>
+    <p>Seu site está online em <a href="http://efersonmarques-code.com/" target="_blank" rel="noopener noreferrer">http://efersonmarques-code.com/</a></p>
+    <p>Última publicação feita por <a href="https://github.com/efersonmarques-code" target="_blank" rel="noopener noreferrer">@efersonmarques-code</a> há alguns minutos.</p>
+    <p><a href="http://efersonmarques-code.com/" target="_blank" rel="noopener noreferrer">Abrir o site</a></p>
   </section>
 
 </main>
@@ -1293,7 +1953,8 @@ deactivate</code></pre>
 <!-- ==================== FOOTER ==================== -->
 <footer>
   <p>🐍 <strong>Curso de Python</strong> — Material didático para estudo</p>
-  <p>Feito com <span class="coracao">❤️</span> para a comunidade Python</p>
+  <p>Desenvolvido por <strong>Luiz Henrique Marques Silva</strong></p>
+  <p>Feito com <span class="coracao">❤️</span> pela comunidade Python</p>
   <p class="copyright">© 2026 — Compartilhe e aprenda!</p>
 </footer>
 
@@ -1304,18 +1965,24 @@ deactivate</code></pre>
 
 <!-- ==================== JAVASCRIPT ==================== -->
 <script>
-  // Botão "voltar ao topo" — mostra após rolar 400px
+  // Botão "voltar ao topo" — mostra mais cedo no mobile e mantém estado correto
   (function() {
     const btn = document.getElementById('backToTop');
     if (!btn) return;
 
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 400) {
+    function atualizarBotao() {
+      const limiar = window.innerWidth <= 768 ? 120 : 250;
+      if (window.scrollY > limiar) {
         btn.classList.add('visible');
       } else {
         btn.classList.remove('visible');
       }
-    }, { passive: true });
+    }
+
+    atualizarBotao();
+
+    window.addEventListener('scroll', atualizarBotao, { passive: true });
+    window.addEventListener('resize', atualizarBotao, { passive: true });
 
     btn.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1325,9 +1992,18 @@ deactivate</code></pre>
   (function() {
     const desafios = document.querySelectorAll('.desafio');
     const acertos = document.getElementById('acertos');
-    let respostasCertas = 0;
+    function atualizarContador() {
+      let respostasCertas = 0;
+      desafios.forEach(function(desafio) {
+        if (desafio.dataset.respondido === 'true') {
+          respostasCertas += 1;
+        }
+      });
+      acertos.textContent = respostasCertas + '/' + desafios.length;
+    }
 
     desafios.forEach(function(desafio) {
+      desafio.dataset.respondido = 'false';
       desafio.querySelector('.verificar').addEventListener('click', function() {
         const selecionada = desafio.querySelector('input:checked');
         const feedback = desafio.querySelector('.feedback');
@@ -1339,15 +2015,20 @@ deactivate</code></pre>
         }
 
         const acertou = selecionada.value === desafio.dataset.resposta;
-        if (acertou && !desafio.dataset.respondido) {
-          respostasCertas += 1;
+        if (acertou) {
           desafio.dataset.respondido = 'true';
+          feedback.textContent = 'Resposta correta!';
+          feedback.className = 'feedback correto';
+        } else {
+          feedback.textContent = 'Ainda não. Revise o conteúdo e tente novamente.';
+          feedback.className = 'feedback incorreto';
         }
-        feedback.textContent = acertou ? 'Resposta correta!' : 'Ainda não. Revise o conteúdo e tente novamente.';
-        feedback.className = acertou ? 'feedback correto' : 'feedback incorreto';
-        acertos.textContent = respostasCertas + '/' + desafios.length;
+
+        atualizarContador();
       });
     });
+
+    atualizarContador();
   })();
 </script>
 
