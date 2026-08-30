@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Curso completo de Python em português — do zero ao avançado. Aprenda sintaxe, POO, bibliotecas, frameworks e mais com links de estudo oficiais.">
 <meta name="keywords" content="python, curso python, aprender python, programação, tutorial python">
-<meta name="author" content="Curso de Python">
+<meta name="author" content="Luiz Henrique Marques Silva">
 <meta name="theme-color" content="#306998">
 
 <!-- Open Graph / Facebook -->
@@ -113,11 +113,11 @@
 
   /* ==================== HEADER ==================== */
   header {
-    background: linear-gradient(135deg, #306998 0%, #FFD43B 100%);
+    background: linear-gradient(135deg, #0f2d41 0%, #1a5a8a 35%, #f1c644 100%);
     color: white;
-    padding: 60px 20px 40px;
+    padding: 70px 20px 48px;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 26px rgba(0,0,0,0.2);
     position: relative;
     overflow: hidden;
   }
@@ -125,7 +125,7 @@
   header::before {
     content: "🐍";
     position: absolute;
-    font-size: 250px;
+    font-size: 260px;
     opacity: 0.08;
     top: -30px;
     left: 50%;
@@ -133,22 +133,37 @@
   }
 
   header h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    font-size: clamp(2.3em, 4vw, 3.6em);
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.28);
     position: relative;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
   }
 
   header p {
-    font-size: 1.2em;
-    opacity: 0.95;
+    font-size: clamp(0.95em, 1.3vw, 1.25em);
+    opacity: 0.98;
     position: relative;
     display: inline-block;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.25);
     border-radius: 999px;
-    padding: 10px 18px;
+    padding: 12px 22px;
     backdrop-filter: blur(2px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    max-width: 90%;
+    line-height: 1.5;
+  }
+
+  header p:last-of-type {
+    margin-top: 14px;
+    font-size: 0.95em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    background: rgba(15, 26, 39, 0.22);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   }
 
   /* ==================== NAVEGAÇÃO ==================== */
@@ -194,6 +209,40 @@
     color: #1a252f;
   }
 
+  .github-top {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 200;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #0f172a 0%, #1d4e89 100%);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 800;
+    border: 1px solid rgba(255, 212, 59, 0.45);
+    box-shadow: 0 10px 22px rgba(12, 26, 37, 0.32);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .github-top:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(25, 53, 80, 0.38);
+    text-decoration: none;
+  }
+
+  .github-top:focus-visible {
+    outline: 3px solid #FFD43B;
+    outline-offset: 3px;
+  }
+
+  .github-top .icon {
+    font-size: 1.2em;
+  }
+
   /* ==================== CONTAINER ==================== */
   .container {
     max-width: 1100px;
@@ -201,6 +250,48 @@
     margin: 0 auto;
     padding: 30px 20px;
     box-sizing: border-box;
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1200px;
+      padding: 42px 26px 32px;
+    }
+
+    section {
+      padding: 38px 40px;
+    }
+
+    section h2 {
+      font-size: 2.2em;
+    }
+
+    .jornada-grid {
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .materias {
+      gap: 18px;
+    }
+
+    .materia-card {
+      min-height: 170px;
+    }
+
+    .sobre-autor {
+      grid-template-columns: 1.7fr 1fr;
+      gap: 24px;
+    }
+
+    .social-section {
+      padding: 38px 40px;
+    }
+
+    .github-top {
+      top: 16px;
+      right: 28px;
+    }
   }
 
   /* Tap highlight transparente nos links (evita flash azul no mobile) */
@@ -473,28 +564,154 @@
 
   /* ==================== FOOTER ==================== */
   footer {
-    background: #2c3e50;
+    background: linear-gradient(135deg, #1a2e3f 0%, #2c3e50 45%, #163843 100%);
     color: #ecf0f1;
     text-align: center;
-    padding: 30px 20px;
+    padding: 36px 20px 30px;
     margin-top: 40px;
+    border-top: 3px solid #FFD43B;
+    box-shadow: 0 -8px 25px rgba(0,0,0,0.12);
   }
 
   footer p {
-    margin: 5px 0;
+    margin: 8px 0;
+  }
+
+  footer strong {
+    color: #FFD43B;
   }
 
   footer .copyright {
     font-size: 0.95rem;
     line-height: 1.5;
+    opacity: 0.9;
   }
 
   footer .coracao {
-    color: #e74c3c;
+    color: #ff6b6b;
+    text-shadow: 0 0 8px rgba(255, 107, 107, 0.35);
+  }
+
+  .social-section {
+    background: linear-gradient(135deg, rgba(15, 26, 39, 0.96), rgba(21, 38, 49, 0.96));
+    margin-bottom: 25px;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+    border: 1px solid rgba(148, 180, 220, 0.18);
+  }
+
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 12px;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #2c3e50 0%, #306998 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid rgba(255, 212, 59, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(48, 105, 152, 0.35);
+    text-decoration: none;
+  }
+
+  .social-icon {
+    font-size: 1.2em;
+  }
+
+  .sobre-autor {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .sobre-autor strong {
+    color: #FFD43B;
+  }
+
+  .autor-badge {
+    background: linear-gradient(135deg, rgba(48, 105, 152, 0.35), rgba(255, 212, 59, 0.18));
+    border: 1px solid rgba(255, 212, 59, 0.25);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  }
+
+  .avatar {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #FFD43B 0%, #306998 100%);
+    color: #0d1f2d;
+    font-size: 2.4em;
+    font-weight: 900;
+    margin-bottom: 12px;
+    box-shadow: 0 14px 28px rgba(48, 105, 152, 0.3);
+  }
+
+  .autor-badge strong {
+    display: block;
+    color: #ffffff;
+    font-size: 1.2em;
+    margin-bottom: 6px;
+  }
+
+  .autor-badge span {
+    color: #dfefff;
+    font-size: 0.9em;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #203d52 0%, #306998 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800;
+    border: 1px solid rgba(255, 212, 59, 0.38);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 22px rgba(48, 105, 152, 0.24);
+  }
+
+  .social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(48, 105, 152, 0.36);
+    text-decoration: none;
   }
 
   /* ==================== RESPONSIVO ==================== */
   @media (max-width: 768px) {
+    .github-top {
+      top: 12px;
+      right: 12px;
+      padding: 8px 12px;
+      font-size: 0.8em;
+    }
+
     header h1 {
       font-size: 2em;
     }
@@ -861,9 +1078,9 @@
 <header>
   <h1>🐍 Curso de Python</h1>
   <p>Guia completo para aprender Python do zero ao avançado</p>
+  <p style="margin-top: 14px; font-size: 0.95em; font-weight: 700; letter-spacing: 0.04em; background: rgba(15, 26, 39, 0.22); border: 1px solid rgba(255,255,255,0.18); box-shadow: 0 4px 12px rgba(0,0,0,0.12); max-width: 90%;">Por Luiz Henrique Marques Silva</p>
 </header>
 
-<!-- ==================== NAVEGAÇÃO ==================== -->
 <nav>
   <ul>
     <li><a href="#introducao">Introdução</a></li>
@@ -877,21 +1094,14 @@
     <li><a href="#exercicios">Exercícios</a></li>
     <li><a href="#materias">Matérias</a></li>
     <li><a href="#recursos">Recursos</a></li>
+    <li><a href="#contato">Contato</a></li>
   </ul>
 </nav>
 
-<!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
-<main id="conteudo-principal" class="container">
-
-  <!-- ========== 1. O QUE É PYTHON ========== -->
-  <section id="introducao">
-    <h2>1. O que é Python?</h2>
-    <p><strong>Python</strong> é uma linguagem de programação de <strong>alto nível</strong>, <strong>interpretada</strong>, <strong>imperativa</strong>, <strong>orientada a objetos</strong> e <strong>funcional</strong>, com <strong>tipagem dinâmica</strong> e <strong>forte</strong>. Foi criada com foco na <strong>legibilidade do código</strong> e na <strong>produtividade do desenvolvedor</strong>.</p>
-    <div class="callout">
-      <strong>📌 Definição formal:</strong> Python é uma linguagem que suporta múltiplos paradigmas de programação, possui uma biblioteca padrão extensa e é distribuída sob a licença <em>Python Software Foundation License</em>.
-    </div>
-  </section>
-
+<a href="https://github.com/efersonmarques-code" class="github-top" target="_blank" rel="noopener noreferrer" aria-label="Perfil do GitHub de Luiz Henrique Marques Silva">
+  <span class="icon">🐙</span>
+  <span>GitHub</span>
+</a>
   <!-- ========== COMO USAR O CURSO ========== -->
   <section id="jornada">
     <h2>Como estudar neste curso</h2>
@@ -1460,11 +1670,34 @@ deactivate</code></pre>
     </ul>
   </section>
 
+  <section class="social-section" id="contato">
+    <h2>Sobre o autor</h2>
+    <div class="sobre-autor">
+      <div>
+        <p>Olá! Meu nome é <strong>Luiz Henrique Marques Silva</strong>, e este projeto foi criado para compartilhar conhecimento de forma clara, prática e acessível sobre Python.</p>
+        <p>O objetivo aqui é ajudar iniciantes a entender os fundamentos da linguagem, explorar conceitos importantes e evoluir com estudo contínuo e execução de exercícios.</p>
+        <div class="social-links" style="margin-top: 18px;">
+          <a href="https://github.com/efersonmarques-code" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Perfil do GitHub de Luiz Henrique Marques Silva">
+            <span class="social-icon">🐙</span>
+            <span>github.com/efersonmarques-code</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="autor-badge">
+        <div class="avatar">LH</div>
+        <strong>Luiz Henrique</strong>
+        <span>Estudante de Python & tecnologia</span>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <!-- ==================== FOOTER ==================== -->
 <footer>
   <p>🐍 <strong>Curso de Python</strong> — Material didático para estudo</p>
+  <p>Desenvolvido por <strong>Luiz Henrique Marques Silva</strong></p>
   <p>Feito com <span class="coracao">❤️</span> pela comunidade Python</p>
   <p class="copyright">© 2026 — Compartilhe e aprenda!</p>
 </footer>
