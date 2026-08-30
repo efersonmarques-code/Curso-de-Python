@@ -1720,22 +1720,22 @@ deactivate</code></pre>
     <p><a href="http://efersonmarques-code.com/" target="_blank" rel="noopener noreferrer">Abrir o site</a></p>
   </section>
 
-  <section class="dns-error" style="margin-top: 30px; padding: 24px 20px; background: rgba(70, 12, 12, 0.5); border: 1px solid rgba(255, 120, 120, 0.5); border-radius: 16px;">
-    <h2>Não é possível acessar esse site</h2>
-    <p>Este erro acontece quando o navegador não consegue resolver o DNS do domínio e não consegue localizar o endereço do site.</p>
+  <section class="dns-error" style="margin-top: 30px; padding: 28px 24px; background: linear-gradient(135deg, rgba(101, 19, 19, 0.82), rgba(41, 14, 14, 0.82)); border: 1px solid rgba(255, 143, 143, 0.65); border-radius: 18px; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);">
+    <h2 style="margin-bottom: 14px; color: #ffdada;">⚠️ Não é possível acessar esse site</h2>
+    <p>Este erro acontece quando o navegador não consegue resolver o DNS do domínio e não encontra o endereço do site.</p>
     <p><strong>Mensagem do navegador:</strong> “Verifique se há um erro de digitação em efersonmarques-code.com. Se o endereço estiver correto, tente executar o Diagnóstico de Rede do Windows.”</p>
     <p><strong>Código do erro:</strong> <code>DNS_PROBE_FINISHED_NXDOM</code></p>
-    <p>Isso normalmente indica que o domínio não está apontando para os registros DNS corretos do GitHub Pages.</p>
-    <ol>
+    <p>Isso normalmente indica que o domínio ainda não está apontando para os registros DNS corretos do GitHub Pages.</p>
+    <ol style="margin: 16px 0 0 20px; padding-left: 16px;">
       <li>Confirme se o domínio foi digitado corretamente.</li>
       <li>Entre no painel do seu provedor de domínio e ajuste os registros DNS.</li>
       <li>Configure os registros do tipo <strong>A</strong> para os IPs do GitHub Pages:</li>
     </ol>
-    <pre><code>185.199.108.153
+    <pre style="margin-top: 14px; padding: 14px 16px; border-radius: 10px; background: rgba(0,0,0,0.23); overflow-x: auto; color: #fff; border: 1px solid rgba(255,255,255,0.1);"><code>185.199.108.153
 185.199.109.153
 185.199.110.153
 185.199.111.153</code></pre>
-    <p>Também adicione um registro <strong>CNAME</strong> para <code>www</code> apontando para <code>efersonmarques-code.github.io</code>.</p>
+    <p style="margin-top: 12px;">Também adicione um registro <strong>CNAME</strong> para <code>www</code> apontando para <code>efersonmarques-code.github.io</code>.</p>
     <p>Depois, espere a propagação do DNS e volte ao GitHub Pages para confirmar o domínio no painel de configurações.</p>
   </section>
 
