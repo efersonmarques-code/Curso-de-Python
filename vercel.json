@@ -1,1 +1,7 @@
-
+{
+  "buildCommand": "echo 'Skipping Jekyll build'",
+  "outputDirectory": "projeto-site",
+  "env": {
+    "JEKYLL_SKIP_BUNDLE": "true"
+  }
+}
