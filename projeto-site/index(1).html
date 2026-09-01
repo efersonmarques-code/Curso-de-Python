@@ -244,6 +244,14 @@
   }
 
   /* ==================== CONTAINER ==================== */
+  main {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 18px 32px;
+    box-sizing: border-box;
+  }
+
   .container {
     max-width: 1100px;
     width: 100%;
@@ -641,8 +649,60 @@
     margin-top: 10px;
   }
 
+  .sobre-autor-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    padding-bottom: 8px;
+    position: relative;
+  }
+
+  .sobre-autor-wrapper::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .sobre-autor-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255, 212, 59, 0.65);
+    border-radius: 999px;
+  }
+
   .sobre-autor strong {
     color: #FFD43B;
+  }
+
+  @media (max-width: 767px) {
+    .sobre-autor-wrapper {
+      overflow-x: auto;
+      margin: 0 -4px;
+      padding-bottom: 12px;
+    }
+
+    .sobre-autor-wrapper::after {
+      content: "↔ arraste";
+      position: absolute;
+      right: 12px;
+      bottom: 2px;
+      font-size: 0.72rem;
+      color: rgba(255, 212, 59, 0.9);
+      letter-spacing: 0.04em;
+      font-weight: 700;
+      pointer-events: none;
+    }
+
+    .sobre-autor {
+      display: flex;
+      gap: 16px;
+      align-items: stretch;
+      min-width: 620px;
+      padding: 8px 4px 12px;
+      scroll-snap-type: x proximity;
+    }
+
+    .sobre-autor > * {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
+      min-height: 220px;
+    }
   }
 
   .autor-badge {
@@ -701,6 +761,22 @@
     transform: translateY(-2px);
     box-shadow: 0 10px 22px rgba(48, 105, 152, 0.36);
     text-decoration: none;
+  }
+
+  .github-pages-info {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .github-pages-info p {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .github-pages-info a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   /* ==================== RESPONSIVO ==================== */
@@ -874,6 +950,22 @@
       font-size: 0.95rem;
       min-height: 2.2em;
       margin-top: 12px;
+    }
+
+    .github-pages-info {
+      padding: 18px 14px !important;
+    }
+
+    .github-pages-info p {
+      font-size: 0.97rem;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .github-pages-info a {
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
   }
 
@@ -1102,6 +1194,8 @@
   <span class="icon">🐙</span>
   <span>GitHub</span>
 </a>
+
+<main id="conteudo-principal">
   <!-- ========== COMO USAR O CURSO ========== -->
   <section id="jornada">
     <h2>Como estudar neste curso</h2>
@@ -1672,32 +1766,34 @@ deactivate</code></pre>
 
   <section class="social-section" id="contato">
     <h2>Sobre o autor</h2>
-    <div class="sobre-autor">
-      <div>
-        <p>Olá! Meu nome é <strong>Luiz Henrique Marques Silva</strong>, e este projeto foi criado para compartilhar conhecimento de forma clara, prática e acessível sobre Python.</p>
-        <p>O objetivo aqui é ajudar iniciantes a entender os fundamentos da linguagem, explorar conceitos importantes e evoluir com estudo contínuo e execução de exercícios.</p>
-        <div class="social-links" style="margin-top: 18px;">
-          <a href="https://github.com/efersonmarques-code" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Perfil do GitHub de Luiz Henrique Marques Silva">
-            <span class="social-icon">🐙</span>
-            <span>github.com/efersonmarques-code</span>
-          </a>
+    <div class="sobre-autor-wrapper">
+      <div class="sobre-autor">
+        <div>
+          <p>Olá! Meu nome é <strong>Luiz Henrique Marques Silva</strong>, e este projeto foi criado para compartilhar conhecimento de forma clara, prática e acessível sobre Python.</p>
+          <p>O objetivo aqui é ajudar iniciantes a entender os fundamentos da linguagem, explorar conceitos importantes e evoluir com estudo contínuo e execução de exercícios.</p>
+          <div class="social-links" style="margin-top: 18px;">
+            <a href="https://github.com/efersonmarques-code" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Perfil do GitHub de Luiz Henrique Marques Silva">
+              <span class="social-icon">🐙</span>
+              <span>github.com/efersonmarques-code</span>
+            </a>
+          </div>
         </div>
-      </div>
 
-      <div class="autor-badge">
-        <div class="avatar">LH</div>
-        <strong>Luiz Henrique</strong>
-        <span>Estudante de Python & tecnologia</span>
+        <div class="autor-badge">
+          <div class="avatar">LH</div>
+          <strong>Luiz Henrique</strong>
+          <span>Estudante de Python & tecnologia</span>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="github-pages-info" style="margin-top: 30px; padding: 28px 24px; background: linear-gradient(135deg, rgba(15, 35, 48, 0.88), rgba(25, 52, 67, 0.9)); border: 1px solid rgba(255, 212, 59, 0.25); border-radius: 18px; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);">
-    <h2 style="margin-bottom: 14px; color: #dfefff;">Páginas do GitHub</h2>
-    <p>O <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a> foi projetado para hospedar páginas pessoais, organizacionais ou de projetos a partir de um repositório do GitHub.</p>
-    <p>Seu site está online em <a href="http://efersonmarques-code.com/" target="_blank" rel="noopener noreferrer">http://efersonmarques-code.com/</a></p>
-    <p>Última publicação feita por <a href="https://github.com/efersonmarques-code" target="_blank" rel="noopener noreferrer">@efersonmarques-code</a> há alguns minutos.</p>
-    <p><a href="http://efersonmarques-code.com/" target="_blank" rel="noopener noreferrer">Abrir o site</a></p>
+    <h2 style="margin-bottom: 14px; color: #dfefff;">Página do autor</h2>
+    <p>Este projeto foi desenvolvido por <a href="https://github.com/efersonmarques-code" target="_blank" rel="noopener noreferrer">Luiz Henrique Marques Silva</a>, e sua página pessoal está disponível em:</p>
+    <p><a href="https://efersonmarques.vercel.app/" target="_blank" rel="noopener noreferrer">https://efersonmarques.vercel.app/</a></p>
+    <p>Você pode acessar diretamente o site do autor e conhecer mais projetos, materiais e conteúdos relacionados.</p>
+    <p><a href="https://efersonmarques.vercel.app/" target="_blank" rel="noopener noreferrer">Abrir a página do autor</a></p>
   </section>
 
 </main>
